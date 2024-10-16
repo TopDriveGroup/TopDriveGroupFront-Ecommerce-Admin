@@ -41,7 +41,6 @@ export const socketMiddleware: Middleware<any> =
                     dispatch({ type: 'socket/eventReceived', payload: data });
                 });
                 break;
-
             case 'socket/disconnect':
                 socket?.disconnect();
                 socket = null;
@@ -49,8 +48,7 @@ export const socketMiddleware: Middleware<any> =
 
             default:
             break;
-      }
-
+        }
         return next(action);
     };
 };

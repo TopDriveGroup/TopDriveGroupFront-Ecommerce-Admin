@@ -9,7 +9,7 @@ import { getProducts } from '../../../redux/PanelTopDriveGroup/02Product/actions
 import type { RootState, AppDispatch } from '../../../redux/store';
 // ELEMENTOS DEL COMPONENTE
 import { IProduct } from '../../../types/product.types';
-import NavBarTopDriveGroup from '../../../components/PanelTopDriveGroup/01NavBar/NavBar';
+import NavBar from '../../../components/PanelTopDriveGroup/01NavBar/NavBar';
 import Footer from '../../../components/PanelTopDriveGroup/Footer/Footer';
 import SideBar from '../../../components/PanelTopDriveGroup/SideBar/SideBar';
 import ConfirmDeleteProduct from '../../../components/PanelTopDriveGroup/ConfirmDeleteProduct/ConfirmDeleteProduct';
@@ -75,7 +75,7 @@ function ProductsTopDriveGroupPage() {
 
     return (
         <div>
-            <NavBarTopDriveGroup />
+            <NavBar />
             <div className={`${styles.container} d-flex align-items-start justify-content-center`}>
                 <SideBar />
                 <div className={`${styles.container__Component} p-4 d-flex flex-column align-items-start justify-content-start`}>

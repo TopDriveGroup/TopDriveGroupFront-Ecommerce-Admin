@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authUserReducer from './Auth/authSlice';
-import documentRequestReducer from './PanelTopDriveGroup/08DocumentRequest/documentRequestSlice';
+import documentRequestReducer from './PanelTopDriveGroup/06DocumentRequest/documentRequestSlice';
 import productReducer from './PanelTopDriveGroup/02Product/productSlice';
+import customerOrdersReducer from './PanelTopDriveGroup/04CustomerOrders/customerOrdersSlice';
 import { socketMiddleware } from './Socket.io/socketMiddleware';
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -11,6 +12,7 @@ export const store = configureStore({
         authUser: authUserReducer,
         documentRequest: documentRequestReducer,
         products: productReducer,
+        customerOrders: customerOrdersReducer,
     },
     middleware: (getDefaultMiddleware) => 
         getDefaultMiddleware({ serializableCheck: false }).concat(socketMiddleware),

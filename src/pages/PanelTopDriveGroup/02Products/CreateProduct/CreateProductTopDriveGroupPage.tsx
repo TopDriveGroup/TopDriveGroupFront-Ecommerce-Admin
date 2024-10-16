@@ -10,7 +10,7 @@ import { postProduct } from '../../../../redux/PanelTopDriveGroup/02Product/acti
 import type { RootState, AppDispatch } from '../../../../redux/store';
 //ELEMENTOS DEL COMPONENTE
 import { IProduct } from '../../../../types/product.types';
-import NavBarTopDriveGroup from '../../../../components/PanelTopDriveGroup/01NavBar/NavBar';
+import NavBar from '../../../../components/PanelTopDriveGroup/01NavBar/NavBar';
 import Footer from '../../../../components/PanelTopDriveGroup/Footer/Footer';
 import SideBar from '../../../../components/PanelTopDriveGroup/SideBar/SideBar';
 import SelectProductClass from '../../../../helpers/CreateProducts/SelectProductClass/SelectProductClass';
@@ -234,7 +234,7 @@ function CreateProductTopDriveGroupPage() {
 
     return (
         <div>
-            <NavBarTopDriveGroup />
+            <NavBar />
             <div className={`${styles.container} d-flex`}>
                 <SideBar />
                 <div className={`${styles.container__Component} m-auto p-4`}>
