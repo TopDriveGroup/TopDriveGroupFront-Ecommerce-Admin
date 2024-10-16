@@ -1,0 +1,31 @@
+.container {
+    min-height: calc(100vh - 120px);
+    max-width: 1200px;
+    padding: 20px 0;
+    margin: 110px auto 0 auto;
+}
+.main__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.topDriveGroup {
+    font-weight: 800;
+    color: #e4002b;
+}
+.container__SustainabilityPage {
+    max-width: 920px;
+}
+.section__Sustainability {
+    max-width: 300px;
+}
+.image__SustainabilityPage {
+    width: 300px;
+}
+.section {
+    width: 600px;
+    margin: 10px 0;
+}
+.image__Sustainability {
+    width: 80px;
+}
+

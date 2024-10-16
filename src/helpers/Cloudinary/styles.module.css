@@ -1,0 +1,63 @@
+.container__Component {
+    width: calc(100% - 250px);
+    width: 600px;
+}
+.button__attach {
+    background: #888b8d;
+    color: #f8f9fa;
+}
+.button__attach:hover, .button__Submit:hover {
+    opacity: 0.75;
+}
+.button__Submit {
+    background: #c1c6c8;
+    color: #f8f9fa;
+}
+.dragAndDrop {
+    background: rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 100px;
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.dragging {
+    width: 100%;
+    height: 100px;
+    background: #adb5bd;
+}
+.dragAndDrop__Message {
+    color: #e63946;
+}
+.container__Image_Preview {
+    width: 100%;
+}
+.image__Preview {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    height: 200px;
+    width: 160px;
+}
+.imagenes {
+    max-height: 130px;
+    max-width: 130px;
+}
+.button__Remove {
+    top: 10px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    background: #888b8d;
+    border-radius: 3px;
+    color: #f8f9fa;
+}
+.button__Remove:hover {
+    background: #212322;
+}
+.image__Uploaded_Message {
+    display: block;
+    color: #2a9d8f;
+    font-size: 20px;
+    font-weight: bold;
+    top: 0px;
+}

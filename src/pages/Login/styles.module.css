@@ -1,0 +1,51 @@
+.container {
+    width: 60%;
+}
+.container__Component {
+    width: 600px;
+}
+.logo {
+    height: 100px;
+}
+.errors__Login {
+    color: #e4002b;
+    top: -35px;
+    left: 0;
+}
+.form {
+    width: 400px;
+}
+.input {
+    width: 100%;
+}
+.input:focus{
+    outline-color: #e4002b;
+}
+.text__Danger {
+    top: 40px;
+}
+.icon {
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #e4002b;
+}
+.icon:hover {
+    cursor: pointer;
+}
+.container__Loading {
+    width: 100%;
+}
+.button__Submit {
+    width: 100%;
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #e4002b;
+    color: #f8f9fa;
+}
+.link {
+    font-weight: 600;
+    color: #e4002b;
+}

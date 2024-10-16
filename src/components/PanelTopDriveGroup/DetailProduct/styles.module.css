@@ -1,0 +1,138 @@
+.container {
+    background: white;
+    height: 100vh;
+}
+.container__Component {
+    width: 550px;
+    color: #212322;
+    padding: 10px;
+}
+.container__Logo_Close {
+    top: 110px;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.container__Logo {
+    height: 70px;
+    min-width: 200px;
+}
+.logo {
+    width: 180px;
+}
+.icon__Close_Modal {
+    font-size: 30px;
+}
+.icon__Close_Modal:hover {
+    cursor: pointer;
+    color: #e4002b;
+}
+.title {
+    margin: 5px 0 10px 0;
+    color: #e4002b;
+    font-weight: 700;
+}
+
+
+
+/* INFORMACION DE LA COMPRA */
+.container__Data {
+    height: calc(100vh - 230px);
+    width: 100%;
+}
+.container__Count {
+    height: 40px;
+}
+.container__Icon_Minus_Plus, .container__Favorite {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 50px;
+}
+.container__Icon_Minus_Plus:hover {
+    cursor: pointer;
+    
+    .icon {
+        color: #e4002b;
+    }    
+}
+.icon {
+    font-size: 25px;
+}
+.count {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 50px;
+}
+.container__Product {
+    height: 180px;
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+.container__Product:last-child {
+    margin: 0;
+}
+.container__Image_Product {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    height: 180px;
+    width: 130px;
+}
+.image__Product {
+    height: 70px;
+}
+.price__Product {
+    color: #495057;
+    font-weight: 600;
+}
+.container__Text_Product {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 180px;
+    width: calc(100% - 180px);
+    margin: 0 0 0 5px;
+    padding: 0 0 0 10px;
+}
+.title__Product {
+    margin: 0 0 10px 0;
+    color: #212322;
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+.title__Sap {
+    color: #495057;
+}
+.container__Icon_Delete {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0 5px 0 0;
+    height: 180px;
+    width: 50px;
+}
+.icon_Delete {
+    color: #495057;
+    font-size: 25px;
+}
+.icon_Delete:hover {
+    cursor: pointer;
+    color: #e4002b;
+}
+.container__Total {
+    color: #212322;
+    font-weight: 700;
+    font-size: 20px;
+}
+.button__Continue_Shopping {
+    background: #e4002b;
+    padding: 10px 20px;
+    color: #f8f9fa;
+}
+.button__Continue_Shopping:hover {
+    cursor: pointer;
+}
+.button_Go_To_Cart {
+    background: #e4002b;
+    color: #f8f9fa;
+    padding: 10px 20px;
+}

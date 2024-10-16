@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+User-agent: *
+Allow: /*.css
+Allow: /*.jpeg
+Allow: /*.js
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.jpg
+Allow: /*.svg
+Allow: /*.woff
+Allow: /*.gif
+Allow: /*.ico
+
+Sitemap: https://topdrivegroup.com/sitemap.xml

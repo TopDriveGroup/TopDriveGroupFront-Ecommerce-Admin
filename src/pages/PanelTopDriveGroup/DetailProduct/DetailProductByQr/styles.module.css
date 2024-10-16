@@ -1,0 +1,45 @@
+.container {
+    min-height: calc(100vh - 120px);
+    color: #495057;
+    margin: 0 auto;
+    width: 650px;
+}
+.main__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.secundary__Title {
+    font-weight: 700;
+    color: #212322;
+}
+.meta__Data {
+    height: 200px;
+    width: 100%;
+}
+.container__Images {
+    height: 100%;
+}
+.image {
+    max-height: 170px;
+    max-width: 150px;
+}
+.code__Meta_Data {
+    height: 100%;
+    width: 200px;   
+}
+.image__Qr {
+    width: 175px;
+}
+.container__Propertie {
+    border-Bottom: 1px solid #ced4da;
+    width: 100%;
+}
+.title__Product {
+    width: 250px;
+    background: #f0f0f0;
+    padding: 5px 10px;
+}
+.value__Characteristics {
+    padding: 5px 10px;
+    width: 400px;
+}

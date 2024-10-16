@@ -1,0 +1,15 @@
+.container {
+    min-height: calc(100vh - 120px);
+    max-width: 1200px;
+    padding: 20px 0;
+    margin: 110px auto 0 auto;
+}
+.main__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.container__Component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

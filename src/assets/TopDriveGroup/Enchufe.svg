@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-481e382e-24d1-439b-ab2e-c1166a1c76ab" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 389.1 509.96">
+  <defs>
+    <clipPath id="uuid-be3f22d8-65c3-402f-a719-af155c45dab5">
+      <rect x="1.28" y="120.52" width="387.82" height="389.45" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-3e939856-2096-4941-bbd5-4d7327316e52">
+      <path d="M231.36,319.21c0-.56-.03-4.63-.03-7.74,89.6-17.01,157.6-95.86,157.6-190.36h-72.71c0,66.77-54.34,121.12-121.12,121.12s-121.12-54.31-121.12-121.12H1.28c0,94.55,68.05,173.42,157.74,190.4v7.36c1.27,105.19,87.25,190.37,192.76,190.37v-72.36c-65.5,0-118.93-52.54-120.41-117.68" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-7a815c5b-5e27-43c2-bb2d-4e298131ec61">
+      <rect x="242.38" width="77.22" height="123.5" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-896ce48f-d9aa-452a-bd79-db66a9bc9f67">
+      <polygon points="309.53 0 316.22 121.12 243.59 121.12 250.84 0 309.53 0" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-088f00a8-361c-4900-96f0-931e8f105d93">
+      <rect x="72.99" y="23.99" width="75.71" height="99.51" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-269ae57d-d94c-4772-9a6d-2baeefb004a0">
+      <polygon points="140.13 24.34 146.78 121.12 74.18 121.12 81.48 24.34 140.13 24.34" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-35ff17c8-f29b-4db8-ac41-fb587a4143a8">
+      <rect x="145.86" y="120.52" width="98.45" height="50.19" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-b99679ba-d0a1-4451-b00e-c9731c2859a2">
+      <path d="M146.66,121.12c-.05,26.77,21.67,48.49,48.44,48.49s48.49-21.72,48.49-48.49h-96.93Z" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+  </defs>
+  <g style="clip-path: url(#uuid-be3f22d8-65c3-402f-a719-af155c45dab5);">
+    <g style="clip-path: url(#uuid-3e939856-2096-4941-bbd5-4d7327316e52);">
+      <path d="M-18.64-19.92h426.31v549.81H-18.64V-19.92Z" style="fill: #e30523; stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-7a815c5b-5e27-43c2-bb2d-4e298131ec61);">
+    <g style="clip-path: url(#uuid-896ce48f-d9aa-452a-bd79-db66a9bc9f67);">
+      <path d="M-18.64-19.92h426.31v549.81H-18.64V-19.92Z" style="fill: #222224; stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-088f00a8-361c-4900-96f0-931e8f105d93);">
+    <g style="clip-path: url(#uuid-269ae57d-d94c-4772-9a6d-2baeefb004a0);">
+      <path d="M-18.64-19.92h426.31v549.81H-18.64V-19.92Z" style="fill: #222224; stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-35ff17c8-f29b-4db8-ac41-fb587a4143a8);">
+    <g style="clip-path: url(#uuid-b99679ba-d0a1-4451-b00e-c9731c2859a2);">
+      <path d="M-18.64-19.92h426.31v549.81H-18.64V-19.92Z" style="fill: #e30523; stroke-width: 0px;"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+.container {
+    max-width: 1000px;
+    padding: 20px 0;
+}
+.main__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+
+.container__Services {
+    flex-wrap: wrap;
+}
+.service {
+    background-image: url('../../../assets//Landing//PaisajeIndustrial.webp');
+    height: 300px;
+    width: 260px;
+    object-fit: cover;
+    background-size: cover;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    color: #f8f9fa;
+}
+.title__section {
+    text-shadow: 1px 1px 1px #212529;
+}
+
+.container__link__Button {
+    height: 50px;
+    width: 100%;
+}
+.link__Button {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    background: #e4002b;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.link__Button:hover {
+    font-weight: 700;
+    cursor: pointer;
+    background: #cc0000;
+} 

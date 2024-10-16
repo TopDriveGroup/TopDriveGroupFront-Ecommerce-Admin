@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-d1af85d1-4b38-431a-9acf-9332d73ee0f1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 812.86 205.58">
+  <defs>
+    <clipPath id="uuid-061141d5-70e5-431d-82a0-2c6407d34ef6">
+      <rect x=".61" y="41.57" width="133.93" height="134.49" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-fc7ea880-4801-4229-a9a1-7d4b0d29710b">
+      <path d="M80.07,110.19c0-.19-.01-1.6-.01-2.67,30.94-5.88,54.43-33.1,54.43-65.74h-25.11c0,23.06-18.77,41.83-41.83,41.83s-41.83-18.76-41.83-41.83H.61c0,32.65,23.5,59.89,54.47,65.76v2.54c.44,36.33,30.13,65.74,66.57,65.74v-24.99c-22.62,0-41.07-18.15-41.58-40.64" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-a9e5d038-2d95-4c5f-9ffc-d87e2eec58ac">
+      <rect x="83.87" y="-.05" width="26.67" height="42.65" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-a0ba78bb-c674-4555-a0ee-9fecccc53b67">
+      <polygon points="107.06 -.05 109.37 41.78 84.29 41.78 86.8 -.05 107.06 -.05" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-a55ef263-95f5-4b4d-aa33-2ec7fcc6c3eb">
+      <rect x="25.37" y="8.24" width="26.15" height="34.36" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-2f300e40-d1c9-473a-93b5-94981d0f2f7e">
+      <polygon points="48.56 8.36 50.86 41.78 25.79 41.78 28.31 8.36 48.56 8.36" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-0e397120-e634-4991-bb12-dc2da375ff0b">
+      <rect x="50.54" y="41.57" width="34" height="17.33" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-6f33dd22-dfec-426f-909c-9a7c504e6aba">
+      <path d="M50.82,41.78c-.02,9.24,7.48,16.74,16.73,16.74s16.74-7.5,16.74-16.74h-33.47Z" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-cc690534-800a-4f52-9ea9-19c4b53395cc">
+      <path d="M161.2-.04h84.45v24.63h-84.45V-.04ZM190.62,24.59h25.06v83.96h-25.06V24.59Z" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-fec8da76-b7a4-4ca2-88f0-44cc33a13369">
+      <rect x="226.54" y="24.24" width="85.33" height="85.33" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-408311bc-f60f-44ab-8eda-f1ccf80c85bf">
+      <path d="M284.14,66.44c0-9.01-6.67-16.22-14.78-16.22s-14.79,7.2-14.79,16.22,6.68,16.22,14.78,16.22,14.78-7.21,14.78-16.22M311.31,61.85c2.85,26.84-19.67,49.36-46.52,46.52-19.55-2.08-35.28-17.81-37.35-37.36-2.85-26.84,19.68-49.36,46.52-46.52,19.55,2.08,35.28,17.81,37.35,37.36" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-763808b5-2bc2-44e2-907d-bc6fe3e6420f">
+      <rect x="322.54" y="24.7" width="86.32" height="110.07" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-6151a1ef-43df-4eb4-ad74-07d1fab1f987">
+      <path d="M383.86,66.61c0-10.03-7.7-18.09-17.38-18.09-6.28,0-12.18,3.58-15.23,9.49-2.27,5.38-2.34,11.43-.2,16.87l.2.51c3.04,5.74,8.96,9.49,15.23,9.49,9.67,0,17.38-8.24,17.38-18.27M408.27,67.08c0,23.11-17.73,41.92-38.89,41.92-14.18,0-21.15-9.66-21.15-9.66v34.46h-25.62V25.1h25.62v6.33c6.09-3.94,13.08-6.09,20.61-6.09,21.69,0,39.42,18.63,39.42,41.74" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-7ffd19be-ad79-4503-9625-8759aad148e3">
+      <rect x="418.54" y="-.07" width="97.64" height="109.64" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-454c1ef1-7e7e-4ac2-969f-7d777c5969f9">
+      <path d="M490.73,54.31c0-15.96-11.58-29.13-25.8-29.13h-20.46v58.44h20.3c14.39,0,25.98-13.16,25.98-29.29M516,54.32c0,29.99-22.99,54.38-51.06,54.38h-45.57V-.07h45.57c28.08,0,51.06,24.38,51.06,54.38" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-185cb390-c42e-4cf9-8223-2367faf3b7ec">
+      <rect x="526.54" y="23.32" width="66.67" height="86.25" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-cf6e89f2-5309-4f44-a2e5-6cfa97bf9b4c">
+      <path d="M575.01,24.09c6.03,0,12.25,2.06,17.9,6l-9.99,22.31c-4.14-3.19-7.91-4.49-12.44-4.13-14.69,1.5-16.4,16.13-16.4,24.2v36.39h-27.13V25.03h27.15v10.89c4.53-8.82,13.19-11.82,20.93-11.82" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-06b4576d-2001-4b7a-b5eb-00ce71a338f3">
+      <rect x="601.49" y="32.95" width="27.52" height="76.62" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-589951a2-15d0-45f0-9932-e036b12d720b">
+      <polygon points="628.9 108.7 601.92 108.7 601.92 33.38 628.91 33.38 628.9 108.7" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-27247217-3160-4353-98e5-5e452deaac8a">
+      <rect x="637.26" y="24.7" width="92.19" height="84.88" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-5fd7cd1d-f9ff-490b-be33-81d29716b54e">
+      <polygon points="700.68 25.51 729.35 25.51 697.32 108.76 670.13 108.76 638.1 25.51 666.77 25.51 683.73 69.65 700.68 25.51" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-b9bb2576-9fbc-44f7-87e2-9a885e00ce5a">
+      <rect x="726.7" y="24.7" width="83.84" height="84.88" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-724ff2cd-b98c-4451-ae2c-a45d3dff6905">
+      <path d="M786.45,58.32c-2.92-8.28-8.99-12.41-17.28-12.41-9.24,0-15.82,4.87-18.26,12.41h35.54ZM809.62,65.3c.18,4.29-.9,10.19-.9,10.19h-57.62c1.61,5.37,8.3,10.69,16.6,10.69s13.29-3.36,16.5-8.19l18.79,11.98c-7.69,11.63-20.73,18.77-34.68,18.77-22.89,0-41.31-18.77-41.31-41.84s18.42-41.66,41.31-41.66,40.41,17.87,41.3,40.05" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-26c2d906-89ed-4a6f-854a-f411d59b28a8">
+      <rect x="601.49" y="-.07" width="27.52" height="27.52" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-e463d06d-381a-4562-8b5a-0ddf9d37a3a7">
+      <path d="M628.9,13.44c0,7.46-6.04,13.5-13.5,13.5s-13.5-6.04-13.5-13.5S607.94-.06,615.4-.06s13.5,6.04,13.5,13.5" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+  </defs>
+  <g style="clip-path: url(#uuid-061141d5-70e5-431d-82a0-2c6407d34ef6);">
+    <g style="clip-path: url(#uuid-fc7ea880-4801-4229-a9a1-7d4b0d29710b);">
+      <path d="M-6.27-6.93h147.22v189.88H-6.27V-6.93Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-a9e5d038-2d95-4c5f-9ffc-d87e2eec58ac);">
+    <g style="clip-path: url(#uuid-a0ba78bb-c674-4555-a0ee-9fecccc53b67);">
+      <path d="M-6.27-6.93h147.22v189.88H-6.27V-6.93Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-a55ef263-95f5-4b4d-aa33-2ec7fcc6c3eb);">
+    <g style="clip-path: url(#uuid-2f300e40-d1c9-473a-93b5-94981d0f2f7e);">
+      <path d="M-6.27-6.93h147.22v189.88H-6.27V-6.93Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-0e397120-e634-4991-bb12-dc2da375ff0b);">
+    <g style="clip-path: url(#uuid-6f33dd22-dfec-426f-909c-9a7c504e6aba);">
+      <path d="M-6.27-6.93h147.22v189.88H-6.27V-6.93Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-cc690534-800a-4f52-9ea9-19c4b53395cc);">
+    <path d="M154.32-6.95h661.82v147.22H154.32V-6.95Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+  </g>
+  <g style="clip-path: url(#uuid-fec8da76-b7a4-4ca2-88f0-44cc33a13369);">
+    <g style="clip-path: url(#uuid-408311bc-f60f-44ab-8eda-f1ccf80c85bf);">
+      <path d="M154.32-6.95h661.82v147.22H154.32V-6.95Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-763808b5-2bc2-44e2-907d-bc6fe3e6420f);">
+    <g style="clip-path: url(#uuid-6151a1ef-43df-4eb4-ad74-07d1fab1f987);">
+      <path d="M154.32-6.95h661.82v147.22H154.32V-6.95Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-7ffd19be-ad79-4503-9625-8759aad148e3);">
+    <g style="clip-path: url(#uuid-454c1ef1-7e7e-4ac2-969f-7d777c5969f9);">
+      <path d="M154.32-6.95h661.82v147.22H154.32V-6.95Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-185cb390-c42e-4cf9-8223-2367faf3b7ec);">
+    <g style="clip-path: url(#uuid-cf6e89f2-5309-4f44-a2e5-6cfa97bf9b4c);">
+      <path d="M154.32-6.95h661.82v147.22H154.32V-6.95Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-06b4576d-2001-4b7a-b5eb-00ce71a338f3);">
+    <g style="clip-path: url(#uuid-589951a2-15d0-45f0-9932-e036b12d720b);">
+      <path d="M154.32-6.95h661.82v147.22H154.32V-6.95Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-27247217-3160-4353-98e5-5e452deaac8a);">
+    <g style="clip-path: url(#uuid-5fd7cd1d-f9ff-490b-be33-81d29716b54e);">
+      <path d="M154.32-6.95h661.82v147.22H154.32V-6.95Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-b9bb2576-9fbc-44f7-87e2-9a885e00ce5a);">
+    <g style="clip-path: url(#uuid-724ff2cd-b98c-4451-ae2c-a45d3dff6905);">
+      <path d="M154.32-6.95h661.82v147.22H154.32V-6.95Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <g style="clip-path: url(#uuid-26c2d906-89ed-4a6f-854a-f411d59b28a8);">
+    <g style="clip-path: url(#uuid-e463d06d-381a-4562-8b5a-0ddf9d37a3a7);">
+      <path d="M154.32-6.95h661.82v147.22H154.32V-6.95Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+    </g>
+  </g>
+  <path d="M604.53,161.18h13.88v23c-3.17,2.28-6.81,4.03-10.94,5.25-4.13,1.21-8.25,1.81-12.38,1.81-5.82,0-11.06-1.23-15.71-3.69-4.66-2.46-8.31-5.88-10.96-10.27-2.64-4.39-3.96-9.35-3.96-14.9s1.32-10.53,3.96-14.92c2.65-4.39,6.33-7.81,11.04-10.27,4.71-2.46,10.02-3.69,15.94-3.69,5.18,0,9.83.88,13.96,2.63,4.13,1.74,7.56,4.24,10.31,7.52l-10,9.04c-3.75-4.13-8.24-6.19-13.48-6.19-4.75,0-8.58,1.45-11.5,4.33-2.91,2.88-4.35,6.72-4.35,11.54,0,3.06.66,5.79,1.98,8.21,1.32,2.41,3.17,4.28,5.54,5.63,2.39,1.35,5.11,2.02,8.19,2.02s5.84-.61,8.48-1.83v-15.23Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+  <path d="M640.43,152.31c1.54-1.96,3.54-3.42,6-4.4,2.46-.98,5.27-1.48,8.44-1.48v13.56c-1.38-.15-2.52-.23-3.42-.23-3.22,0-5.74.88-7.56,2.63-1.82,1.74-2.73,4.41-2.73,8v19.75h-15.08v-42.98h14.35v5.15Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+  <path d="M681.19,190.85c-4.6,0-8.75-.95-12.46-2.85-3.7-1.9-6.59-4.54-8.69-7.92-2.08-3.39-3.13-7.23-3.13-11.52s1.04-8.02,3.13-11.4c2.09-3.39,4.98-6.02,8.65-7.9,3.68-1.89,7.84-2.83,12.5-2.83s8.82.95,12.52,2.83c3.71,1.88,6.59,4.49,8.65,7.85,2.07,3.35,3.1,7.16,3.1,11.44s-1.04,8.14-3.1,11.52c-2.06,3.38-4.94,6.02-8.65,7.92-3.7,1.91-7.87,2.85-12.52,2.85ZM681.19,178.87c2.64,0,4.8-.91,6.5-2.73,1.69-1.82,2.54-4.34,2.54-7.58s-.85-5.65-2.54-7.44c-1.7-1.8-3.86-2.71-6.5-2.71s-4.83.91-6.52,2.71c-1.68,1.79-2.52,4.27-2.52,7.44s.84,5.77,2.52,7.58c1.69,1.82,3.86,2.73,6.52,2.73Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+  <path d="M756.03,147.16v42.98h-14.35v-4.6c-1.58,1.75-3.49,3.08-5.71,3.98-2.22.89-4.58,1.33-7.06,1.33-5.56,0-9.99-1.64-13.29-4.92-3.29-3.28-4.94-8.19-4.94-14.75v-24.02h15.06v21.56c0,3.22.6,5.58,1.81,7.06,1.22,1.49,3,2.23,5.33,2.23s4.31-.83,5.81-2.5c1.51-1.67,2.27-4.22,2.27-7.67v-20.69h15.06Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+  <path d="M791.14,146.43c3.92,0,7.47.92,10.67,2.75,3.21,1.82,5.75,4.41,7.63,7.77,1.88,3.36,2.81,7.26,2.81,11.69s-.94,8.35-2.81,11.71c-1.88,3.36-4.42,5.95-7.63,7.77-3.2,1.82-6.75,2.73-10.67,2.73-5.02,0-9-1.51-11.96-4.52v19.21h-15.08v-58.38h14.35v4.27c2.8-3.33,7.03-5,12.69-5ZM787.98,178.87c2.64,0,4.8-.91,6.5-2.73,1.69-1.82,2.54-4.32,2.54-7.5s-.85-5.66-2.54-7.48c-1.7-1.83-3.86-2.75-6.5-2.75s-4.81.92-6.5,2.75c-1.7,1.82-2.54,4.31-2.54,7.48s.84,5.68,2.54,7.5c1.69,1.82,3.86,2.73,6.5,2.73Z" style="fill: rgba(228, 0, 43, 1); stroke-width: 0px;"/>
+</svg>

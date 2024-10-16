@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-8af69744-ce64-413a-a6cc-3a4fa7fa2bb8" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 387.65 509.25">
+  <defs>
+    <clipPath id="uuid-07b89e52-0928-415c-a323-207bd1dd9c0f">
+      <path d="M230.08,319.21c0-.56-.03-4.63-.03-7.74,89.6-17.01,157.6-95.86,157.6-190.36h-72.71c0,66.77-54.34,121.12-121.12,121.12s-121.12-54.31-121.12-121.12H0c0,94.55,68.05,173.42,157.74,190.4v7.36c1.27,105.19,87.25,190.37,192.76,190.37v-72.36c-65.5,0-118.93-52.54-120.41-117.68" style="fill: rgba(0, 0, 0, 0.01); stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-8e0acd71-fc0f-41d1-b8e4-99033127d6ee">
+      <polygon points="308.25 0 314.94 121.12 242.31 121.12 249.57 0 308.25 0" style="fill: rgba(0, 0, 0, 0.01); stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-a87b7f3a-f8e2-40fc-a341-5c44868c7fcd">
+      <polygon points="138.85 24.34 145.51 121.12 72.9 121.12 80.2 24.34 138.85 24.34" style="fill: rgba(0, 0, 0, 0.01); stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="uuid-0747843f-cd6e-4201-ba4b-fed04f5bbac0">
+      <path d="M145.38,121.12c-.05,26.77,21.67,48.49,48.44,48.49s48.49-21.72,48.49-48.49h-96.93Z" style="fill: rgba(0, 0, 0, 0.01); stroke-width: 0px;"/>
+    </clipPath>
+  </defs>
+  <g id="uuid-816ac5c5-3c09-4300-9127-032943f7e085" data-name="Capa 1">
+    <g>
+      <g>
+        <path d="M230.08,319.21c0-.56-.03-4.63-.03-7.74,89.6-17.01,157.6-95.86,157.6-190.36h-72.71c0,66.77-54.34,121.12-121.12,121.12s-121.12-54.31-121.12-121.12H0c0,94.55,68.05,173.42,157.74,190.4v7.36c1.27,105.19,87.25,190.37,192.76,190.37v-72.36c-65.5,0-118.93-52.54-120.41-117.68" style="fill: rgba(0, 0, 0, 0.01);"/>
+        <g style="clip-path: url(#uuid-07b89e52-0928-415c-a323-207bd1dd9c0f);">
+          <path d="M-19.92-19.92h426.31v549.81H-19.92V-19.92Z" style="fill: rgba(0, 0, 0, 0.01); stroke-width: 0px;"/>
+        </g>
+      </g>
+      <g>
+        <polygon points="308.25 0 314.94 121.12 242.31 121.12 249.57 0 308.25 0" style="fill: rgba(0, 0, 0, 0.01);"/>
+        <g style="clip-path: url(#uuid-8e0acd71-fc0f-41d1-b8e4-99033127d6ee);">
+          <path d="M-19.92-19.92h426.31v549.81H-19.92V-19.92Z" style="fill: rgba(0, 0, 0, 0.01); stroke-width: 0px;"/>
+        </g>
+      </g>
+      <g>
+        <polygon points="138.85 24.34 145.51 121.12 72.9 121.12 80.2 24.34 138.85 24.34" style="fill: rgba(0, 0, 0, 0.01);"/>
+        <g style="clip-path: url(#uuid-a87b7f3a-f8e2-40fc-a341-5c44868c7fcd);">
+          <path d="M-19.92-19.92h426.31v549.81H-19.92V-19.92Z" style="fill: rgba(0, 0, 0, 0.01); stroke-width: 0px;"/>
+        </g>
+      </g>
+      <g>
+        <path d="M145.38,121.12c-.05,26.77,21.67,48.49,48.44,48.49s48.49-21.72,48.49-48.49h-96.93Z" style="fill: rgba(0, 0, 0, 0.01);"/>
+        <g style="clip-path: url(#uuid-0747843f-cd6e-4201-ba4b-fed04f5bbac0);">
+          <path d="M-19.92-19.92h426.31v549.81H-19.92V-19.92Z" style="fill: rgba(0, 0, 0, 0.01); stroke-width: 0px;"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

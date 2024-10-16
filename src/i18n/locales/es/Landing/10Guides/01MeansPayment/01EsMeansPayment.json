@@ -1,0 +1,15 @@
+{
+    "meansPayment": {
+        "main__Title": "Medios de pago",
+        "introduction__Page": "acepta las siguientes Formas de Pago electrónicas por medio de nuestro proveedor de servicios certificado, PAYU Latam.",
+        "title__Credit_Card": "Tarjetas de crédito",
+        "text__Credit_Card": "Una vez que tu pedido ha sido confirmado, tu tarjeta de crédito o débito será cargada. No nos hacemos responsables de errores tipográficos de digitación en el sitio de nuestro proveedor del sistema de pagos electrónicos autorizado Payu.",
+        "title__Accounts_Debit": "Débitos a Cuentas de Ahorro y Cuentas Corrientes",
+        "text__Accounts_Debit": "Puedes hacer tus pagos a través de PSE, desde cualquiera de las siguentes entidades:",
+        "text__Payments": "Puedes realizar tus pagos en casi cualquier entidad registrada en el Sistema Financiero Colombiano",
+        "see__List_Finantial_Entity": "Ver lista completa de Entidades Financieras",
+        "hide__List_Finantial_Entity": "Ocultar lista completa de Entidades Financieras",
+        "title__Banks": "Pago en Bancos",
+        "text__Banks": "Imprime tu recibo de consignación con código de barras y preséntalo en cualquier sucursal de Banco Davivienda. El plazo para realizar el pago es de 24 horas, pasado este plazo tu pedido será cancelado automáticamente."
+    }
+}

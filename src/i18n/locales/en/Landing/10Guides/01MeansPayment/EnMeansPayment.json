@@ -1,0 +1,15 @@
+{
+    "meansPayment": {
+        "main__Title": "Payment Methods",
+        "introduction__Page": "we accept the following electronic payment methods through our certified service provider, PAYU Latam.",
+        "title__Credit_Card": "Credit Cards",
+        "text__Credit_Card": "Once your order has been confirmed, your credit or debit card will be charged. We are not responsible for any typographical errors made on the site of our authorized electronic payment system provider, PayU.",
+        "title__Accounts_Debit": "Savings and Checking Account Debits",
+        "text__Accounts_Debit": "You can make payments through PSE from any of the following financial institutions:",
+        "text__Payments": "You can make payments at almost any entity registered in the Colombian Financial System.",
+        "see__List_Finantial_Entity": "See full list of Financial Entities",
+        "hide__List_Finantial_Entity": "Hide full list of Financial Entities",
+        "title__Banks": "Bank Payments",
+        "text__Banks": "Print your deposit receipt with a barcode and present it at any Davivienda Bank branch. The payment period is 24 hours, after which your order will be automatically canceled."
+    }
+}

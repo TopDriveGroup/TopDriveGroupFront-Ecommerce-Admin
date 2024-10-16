@@ -1,0 +1,61 @@
+{
+    "quotation": {
+        "banner__Title": "COTIZACIONES",
+        "title_Section": "Cotizaciones",
+        "alert__Success": "Formulario enviado con éxito",
+
+        "section_Type_Applicat": "Tipo de solicitante",
+        "option_Select_Legal_Entity_Type_Applicat": "Persona Jurídica",
+        "option_Select_Natural_Person_Type_Applicat": "Persona Natural",
+        "error_Type_Applicat": "El tipo de solicitante es requerido",
+
+        "section_Corporate_Name": "Razón Social",
+        "placeholder_Corporate_Name": "Razón Social de tu empresa",
+        "error_Corporate_Name": "La Razón Social es requerida",
+
+        "section_User_Name": "Nombres",
+        "placeholder_User_Name": "¿Cuáles son tus nombres?",
+        "error_User_Name": "Tus nombres son requeridos",
+
+        "section_Last_Name": "Apellidos",
+        "placeholder_Last_Name": "¿Cuáles son tu apellidos?",
+        "error_Last_Name": "Tus apellidos son requeridos",
+        
+        "section_Email": "Email",
+        "placeholder_Email": "¿Cuál es tu email?",
+        "error_Email": "Tu email es requerido",
+        
+        "section_Phone": "Celular",
+        "placeholder_Phone": "¿Cuál es tu número de celular?",
+        "error_Phone": "Tu número de celular es requerido",
+        
+
+
+        "subtitle_Product_Quotes": "Cotización de productos",
+        "column_Class": "Clase",
+        "column_Category": "Categoría",
+        "column_Type": "Tipo",
+        "column_Manufacturer": "Fabricante",
+        "column_Item": "Producto",
+        "column_Quantity": "Cantidad",
+        "column_Selling_Price": "Precio",
+        "column_Action": "Acciones",
+        "message_Unrelated_Items": "No tienes productos agregados",
+        "add_Product": "Agregar producto",
+        
+        "subtitle_Services_Quotes": "Cotización de servicios",
+        "message_Unrelated_Services": "No tienes servicios agregados",
+        "add_Service": "Agregar servicio",
+        
+        "textarea": "Comentarios",
+        "placeholder_Textarea": "Descripción de tu solicitud",
+        "textarea_Characters_Remaining": "caracteres restantes",
+        "error_Textarea": "La descripción es requerida",
+
+        "section_Accepted_Policy": "He leído y acepto los",
+        "section_Link_Accepted_Policy": "Términos y Condiciones junto con la Política de tratamiento de datos Personales",
+        "text_Danger_Accepted_Policy": "Aceptar los términos y condiciones es requerido",
+
+        "button_Send": "Enviar"
+    }
+}

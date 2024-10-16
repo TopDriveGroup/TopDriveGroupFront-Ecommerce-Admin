@@ -1,0 +1,13 @@
+{
+    "login": {
+        "email__Placeholder": "Email del usuario",
+        "email__Error": "El email del usuario es requerido",
+
+        "password__Placeholder": "¿Cuál es tu contraseña?",
+        "password__Error": "La contraseña del usuario es requerida",
+
+        "SignUp": "¿No tienes cuenta?",
+        "link__SignUp": "Regístrate acá",
+        "forgotten__Password": "¿Has olvidado la contraseña?"
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "register": {
+        "button__Back": "Atrás",
+        "button__Send": "Enviar",
+        "button__Next": "Siguiente",
+        "have__Account": "¿Ya tienes una cuenta?",
+
+        "title__Personal_Information": "Información personal",
+
+        "identification__Type": "Tipo de identificación",
+        "identification__Type_CC": "Cédula de Ciudadanía",
+        "identification__Type_EC": "Cédula de Extranjería",
+        "identification__Type_PP": "Pasaporte",
+        "identification__Type_Error": "El tipo de documento del usuario es requerido",
+
+        "identification__Number": "Número de identificación",
+        "identification__Number_Error": "El número de identidad es requerido",
+        "identification__Number_Alert": "El número de identidad debe contener entre 1 y 10 dígitos",
+        "identification__Number_Placeholder": "¿Cuál es tu número de identificación?",
+        
+        "digit__Verification": "Dígito de verificación",
+        "digit__Verification_Placeholder": "Dígito de verificación si lo tiene",
+
+        "corporate__Name": "Razón Social",
+        "corporate__Name_Error": "El número de identidad es requerido",
+        "corporate__Name_Placeholder": "Razón Social de tu empresa",
+
+        "name": "Nombres",
+        "name__Placeholder": "¿Cuáles son tus nombres?",
+        "name__Error": "Tus nombres son requeridos",
+
+        "lastName": "Apellidos",
+        "lastName__Placeholder": "¿Cuáles son tu apellidos?",
+        "lastName__Error": "Tus apellidos son requeridos",
+
+        "phone": "Celular o teléfono fijo",
+        "phone__Placeholder": "¿Cuál es el celular o teléfono fijo de tu oficina principal?",
+        "phone__Error": "El celular del usuario es requerido",
+        
+        
+        "access__Credentials": "Credenciales de acceso",
+        "access__Credentials_Alert": "El email del usuario es requerido",
+        "access__Credentials_Pattern_Message": "El email del usuario es requerido",
+        "access__Credentials_Placeholder": "¿Cuál es tu email?",
+        
+        "password": "Contraseña",
+        "password__Placeholder": "¿Cuál es tu contraseña?",
+        "password__Error": "La contraseña del usuario es requerida",
+        
+        "text__Acepted_Contitions": "He leído y acepto los",
+        "text__Terms_Conditions": "Términos y Condiciones",
+        "text__Privacy_Policy": "Políticas de privacidad",
+        "text__Acepted_Contitions_Alert": "Debes de aceptar términos y condiciones"
+    }
+}

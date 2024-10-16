@@ -1,0 +1,146 @@
+.container {
+    min-height: calc(100vh - 200px);
+    color: #495057;
+    margin: 110px auto 0 auto;
+    max-width: 1200px;
+}
+.info_Data {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 450px;
+    width: 100%;
+}
+.brand__Product {
+    color: #e4002b;
+    font-size: 14px;
+    font-weight: 700;
+}
+.title__Product {
+    color: #495057;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+.star__Score {
+    color: #ffb703;
+}
+.price__Product {
+    color: #212322;
+    font-size: 40px;
+    font-weight: 700;
+}
+.stock__Product {
+    font-size: 14px;
+    color: #495057;
+}
+.container__Updated_Cart {
+    height: 40px;
+    width: 100%;
+}
+.container__Count_Favorites {
+    width: 225px;
+}
+.container__Count {
+    height: 40px;
+}
+.container__Icon_Minus_Plus, .container__Favorite {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 50px;
+}
+.container__Icon_Minus_Plus:hover {
+    cursor: pointer;
+    
+    .icon {
+        color: #e4002b;
+    }    
+}
+.icon {
+    font-size: 25px;
+}
+.count {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 50px;
+}
+.container__Favorite:hover {
+    cursor: pointer;
+    border: 1px solid #e4002b;
+}
+.icon__Favorite {
+    color: #e4002b;
+    font-size: 25px;
+}
+.icon__Favorite:hover {
+    cursor: pointer;
+}
+.button__Cart {
+    height: 40px;
+    background: #e4002b;
+    color: #f8f9fa;
+    width: calc(100% - 250px);
+}
+
+/* MODAL DEL CARRITO */
+.container__Modal {
+    z-index: 2;
+    top: 110px;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* CONTENEDOR DE LA DESCARGA DE LA FICHA TECNICA */
+.container__Meta_Data {
+    height: 255px;
+    width: 100%;
+}
+.data {
+    width: calc(100% - 200px);
+}
+.meta__Data {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+.title__Meta__Data {
+    font-weight: 700;
+    width: 250px;
+}
+.code__Meta_Data {
+    width: calc(100% - 250px);
+}
+.meta__Data_Qr {
+    height: 190px;
+    width: 190px;
+}
+.qr__Meta_Data {
+    height: 180px;
+    width: 190px;
+}
+.title__Qr_Meta__Data {
+    font-weight: 700;
+}
+.image__Qr {
+    height: 170px;
+}
+.container__Download_Technical_Data {
+    max-height: 140px;
+    width: 100%;
+}
+.download_Technical_Data {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 320px;
+}
+.download_Technical_Data:hover {
+    border: 1px solid #e4002b;
+    cursor: pointer;
+}
+.pdf {
+    font-size: 16px;
+    color: #e4002b;
+}
+.icon__Download {
+    color: #3a86ff;
+}

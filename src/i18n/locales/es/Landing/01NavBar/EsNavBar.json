@@ -1,0 +1,18 @@
+{
+    "navBar": {
+        "language": "Español",
+        "national": "Nacional",
+        "home": "Inicio",
+        "online__Payments": "Pagos en línea",
+        "portfolio": "Portafolio",
+        "quotations": "Cotizaciones",
+        "contactUs": "Contáctanos",
+        "menu": "MENU",
+        "product": "Product",
+        "placeholder": "Busca por referencia, nombre, clase, categoría, tipo o fabricante",
+        "panel": "PANEL",
+        "exit": "SALIR",
+        "signUp": "REGISTRATE",
+        "signIn": "LOGIN"
+    }
+}

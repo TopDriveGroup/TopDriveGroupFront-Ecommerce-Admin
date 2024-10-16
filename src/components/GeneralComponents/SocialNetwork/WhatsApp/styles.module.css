@@ -1,0 +1,16 @@
+.social__Network_Landgin {
+    height: 45px;
+    width: 45px;
+    bottom: 80px;
+    right: 35px;
+    z-index: 2;
+    transition: 300ms all ease;
+}
+.social__Network_Landgin:hover {
+    cursor: pointer;
+    transform: scale(1.2) rotate(10deg);
+}
+.social__Network {
+    height: 45px;
+    width: 45px;
+}

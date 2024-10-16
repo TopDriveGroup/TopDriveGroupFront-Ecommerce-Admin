@@ -1,0 +1,18 @@
+{
+    "navBar": {
+        "language": "English",
+        "national": "National",
+        "home": "Home",
+        "online__Payments": "Online payments",
+        "portfolio": "Portfolio",
+        "quotations": "Quotations",
+        "contactUs": "Contact Us",
+        "menu": "MENU",
+        "product": "Product",
+        "placeholder": "Search by reference, name, class, category, type or manufacturer",
+        "panel": "PANEL",
+        "exit": "EXIT",
+        "signUp": "SIGN UP",
+        "signIn": "LOGIN"
+    }
+}

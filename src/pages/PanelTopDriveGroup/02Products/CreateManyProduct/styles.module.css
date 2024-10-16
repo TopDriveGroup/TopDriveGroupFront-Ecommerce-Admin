@@ -1,0 +1,11 @@
+.container {
+    min-height: calc(100vh - 120px);
+    margin: 110px auto 0 auto;
+}
+.container__Component {
+    width: calc(100% - 250px);
+}
+.main__Title {
+    font-weight: 600;
+    color: #e4002b;
+}

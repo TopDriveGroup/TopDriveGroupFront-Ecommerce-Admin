@@ -1,0 +1,52 @@
+{
+    "register": {
+        "button__Back": "Back",
+        "button__Send": "Send",
+        "button__Next": "Next",
+        "have__Account": "Already have an account?",
+
+        "title__Personal_Information": "Personal Information",
+
+        "identification__Type": "Identification Type",
+        "identification__Type_CC": "Citizenship ID",
+        "identification__Type_EC": "Foreigner ID",
+        "identification__Type_PP": "Passport",
+        "identification__Type_Error": "The user's document type is required",
+
+        "identification__Number": "Identification Number",
+        "identification__Number_Placeholder": "What is your identification number?",
+        "identification__Number_Alert": "The ID number must contain between 1 and 10 digits",
+        "identification__Number_Error": "The ID number is required",
+
+        "digit__Verification": "Verification Digit",
+        "digit__Verification_Placeholder": "Verification digit if available",
+
+        "corporate__Name": "Corporate Name",
+        "corporate__Name_Placeholder": "Your company's corporate name",
+
+        "name": "First Name",
+        "name__Placeholder": "What is your first name?",
+        "name__Error": "Your first name is required",
+
+        "lastName": "Last Name",
+        "lastName__Placeholder": "What is your last name?",
+        "lastName__Error": "Your last name is required",
+
+        "phone": "Mobile or Landline",
+        "phone__Placeholder": "What is your main office's mobile or landline number?",
+        "phone__Error": "The user's mobile phone is required",
+
+        "access__Credentials": "Access Credentials",
+        "access__Credentials_Alert": "The user's email is required",
+        "access__Credentials_Placeholder": "What is your email?",
+
+        "password": "Password",
+        "password__Placeholder": "What is your password?",
+        "password__Error": "The user's password is required",
+
+        "text__Acepted_Contitions": "I have read and accept the",
+        "text__Terms_Conditions": "Terms and Conditions",
+        "text__Privacy_Policy": "Privacy Policy",
+        "text__Acepted_Contitions_Alert": "You must accept the terms and conditions"
+    }
+}

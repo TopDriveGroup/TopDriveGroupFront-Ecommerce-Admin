@@ -1,0 +1,47 @@
+.card__Slider {
+    border-radius: 5px;
+    height: 350px;
+    width: 180px;
+}
+.card__Slider:hover {
+    .brand__Product {
+        color: #e4002b;
+    }
+    .title__Product {
+        color: #212322;
+    }
+}
+.container__Image {
+    height: 200px;
+}
+.image__Product {
+    max-width: 150px;
+    max-height: 130px;
+}
+.container__Info {
+    height: 120px;
+}
+.brand__Product {
+    color: #212322;
+    font-size: 14px;
+    font-weight: 700;
+}
+.title__Product {
+    color: #495057;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+.price__Product {
+    color: #e4002b;
+    font-size: 20px;
+    font-weight: 500;
+}
+.stock__Product {
+    font-size: 14px;
+    color: #495057;
+}
+.star__Score {
+    color: #ffb703;
+}

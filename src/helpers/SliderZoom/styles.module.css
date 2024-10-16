@@ -1,0 +1,80 @@
+.container {
+    height: 450px;
+    width: 500px;
+}
+.images__Small_Container {
+    height: 450px;
+    width: 130px;
+    gap: 5px;
+}
+.small__Container {
+    height: 110px;
+    width: 110px;
+}
+.small__Container:hover {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+.active {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.image__Small {
+    max-height: 90px;
+    max-width: 90px;
+}
+.image__Container {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    height: 450px;
+    width: 400px;
+}
+.image {
+    height: 250px;
+}
+.button__Prev, .button__Next {
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px -1px rgb(0 0 0 / 30%);
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 18px;
+}
+.button__Prev {
+    left: 0;
+}
+.button__Next {
+    right: 0;
+}
+.button__Prev:hover, .button__Next:hover {
+    box-shadow: 1px 2px 10px -1px rgb(0 0 0 / 30%);
+}
+.icon {
+    color: #e4002b;
+    font-size: 25px;
+}
+.zoom__Box {
+    z-index: 1;
+    right: -700px;
+    width: 680px;
+    height: 450px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    pointer-events: none;
+    background: white;
+    background-repeat: no-repeat;
+
+    /* Define las variables CSS */
+    --zoom-background-image: none;
+    --zoom-background-size: 65%;
+    --zoom-background-position: 0 0;
+
+    /* Usa las variables CSS */
+    background-image: var(--zoom-background-image);
+    background-size: var(--zoom-background-size);
+    background-position: var(--zoom-background-position);
+}

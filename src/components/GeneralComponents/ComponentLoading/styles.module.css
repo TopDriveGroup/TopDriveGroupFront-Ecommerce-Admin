@@ -1,0 +1,7 @@
+.container {
+    height: 80px;
+    width: 80px;
+}
+.role, .text {
+    color: #e4002b;
+}

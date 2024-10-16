@@ -1,0 +1,246 @@
+.container {
+    height: 110px;
+    width: 100%;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.2);
+    background: white;
+    z-index: 3;
+}
+.container__Pre_NavBar {
+    color: #495057;
+    height: 110px;
+}
+
+
+/* Contenedor de la PreNavBar */
+.container__Pre_NavBar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 100%;
+    color: #495057;
+}
+.pre__NavBar {
+    width: 100%;
+}
+.container__Language_Phone_Lines {
+    height: 40px;
+}
+.container__Language {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+}
+.container__Icon_Language {
+    height: 20px;
+    width: 20px;
+}
+.text__Language {
+    width: 60px;
+}
+
+
+/* MENU DE SELECCION DEL IDIOMA */
+.dropdown__Language {
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    background: white;
+    z-index: 1;
+    top: 10px;
+    left: 90px;
+}
+.language__Button {
+    cursor: pointer;
+    color: #495057;
+}
+.language__Button:hover {
+    color: #e4002b;
+}
+.language__Selected {
+    font-weight: 600;
+    color: #e4002b;
+}
+.container__Phone_Lines {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+}
+.home {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+    font-weight: 600;
+    color: #e4002b;
+}
+.home:hover {
+    background: #e4002b;
+    color: #fff;
+}
+
+
+/* PRE NAVBAR */
+.container__Links_PreNavBar {
+    height: 40px;
+}
+.online__Payments {
+    font-weight: 400;
+    color: #495057;
+}
+.industries {
+    font-weight: 400;
+    color: #495057;
+}
+.portfolio {
+    font-weight: 400;
+    color: #495057;
+}
+.quotation {
+    font-weight: 400;
+    color: #495057;
+}
+.aboutUs {
+    font-weight: 400;
+    color: #495057;
+}
+.contactUs {
+    color: #495057;
+    height: 40px;
+    padding: 0 0 0 15px;
+}
+.active {
+    color: #e4002b;
+    font-weight: 600;
+}
+.container__Language:hover, .online__Payments:hover, .industries:hover, .portfolio:hover, .quotation:hover, .aboutUs:hover, .contactUs:hover {
+    color: #e4002b;
+    cursor: pointer;
+}
+
+
+/* Contenedor de la NavbarEcommerce */
+.container__Logo_Close {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.container__Logo {
+    height: 70px;
+    min-width: 200px;
+}
+.logo {
+    width: 180px;
+}
+.container__Menu {
+    font-size: 20px;
+    color: #e4002b;
+    height: 70px;
+    min-width: 115px;
+}
+.container__Menu:hover {
+    cursor: pointer;
+}
+.icon__Menu {
+    font-size: 25px;
+}
+.text__Menu {
+    font-size: 16px;
+}
+
+
+/* MODAL */
+.container__Modal {
+    z-index: 3;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.modal {
+    width: 350px;
+    height: 100vh;
+    background: white;
+}
+.icon__Close_Modal {
+    font-size: 30px;
+}
+.icon__Close_Modal:hover {
+    cursor: pointer;
+    color: #e4002b;
+}
+
+
+
+/* LINKS DE INTERACCIONES */
+.links__Nemu_Interactions {
+    height: 70px;
+}
+/* Contenedor del Carrito de Compras */
+.shopping__Cart {
+    color: #495057;
+    height: 70px;
+    padding: 0 5px;
+}
+.count__Item_Cart {
+    height: 25px;
+    width: 25px;
+    top: 23px;
+    left: 2px;
+    border-radius: 50%;
+    background: #e4002b;
+}
+.icon__Cart {
+    font-size: 25px;
+    margin: 0 0 0 15px;
+}
+.count__Products_Cart {
+    font-size: 14px;
+    color: #f8f9fa;
+    z-index: 1;
+    top: 2px;
+}
+.favorites {
+    color: #495057;
+    height: 70px;
+    padding: 0 5px;
+}
+.icon__Favorite {
+    font-size: 25px;
+    color: #e4002b;
+}
+
+/* Contenedor del Registro */
+.register {
+    font-weight: 400;
+    color: #495057;
+    height: 70px;
+    min-width: 80px;
+}
+.register:hover {
+    color: #e4002b;
+}
+.panel {
+    font-weight: 400;
+    color: #495057;
+    height: 70px;
+}
+.panel:hover {
+    color: #e4002b;
+}
+.icon__User_Panel {
+    margin: 0 -5px 0 0;
+    font-size: 25px;
+}
+/* Contenedor del Login */
+.logout {
+    font-weight: 600;
+    color: #e4002b;
+    padding: 0 0 0 10px;
+    height: 70px;
+}
+.logout:hover {
+    cursor: pointer;
+}
+.login {
+    font-weight: 600;
+    height: 70px;
+    color: #e4002b;
+    padding: 0 0 0 15px;
+}
+.icon__User {
+    font-size: 25px;
+    color: #e4002b;
+    margin: 0 -5px 0 0;
+}

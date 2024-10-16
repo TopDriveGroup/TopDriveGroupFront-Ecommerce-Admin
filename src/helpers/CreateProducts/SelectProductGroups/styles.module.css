@@ -1,0 +1,15 @@
+.container {
+    width: 600px;
+}
+.container__Info {
+    width: 100%;
+}
+.container__Input {
+    width: 100%;
+    border-radius: 3px;
+}
+.input {
+    margin: 0 0 30px 0;
+    border-radius: 3px;
+    width: 100%;
+}

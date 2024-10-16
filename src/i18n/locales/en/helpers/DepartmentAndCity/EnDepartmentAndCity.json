@@ -1,0 +1,8 @@
+{
+    "departmentAndCity": {
+        "department": "Department",
+        "placeholder_Department": "Select a department",
+        "city": "City",
+        "placeholder_City": "Select a city"
+    }
+}

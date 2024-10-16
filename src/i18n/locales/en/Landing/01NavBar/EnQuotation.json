@@ -1,0 +1,61 @@
+{
+    "quotation": {
+        "banner__Title": "QUOTATIONS",
+        "title_Section": "Quotations",
+        "alert__Success": "Form submitted successfully",
+
+        "section_Type_Applicat": "Type of Applicant",
+        "option_Select_Legal_Entity_Type_Applicat": "Legal Entity",
+        "option_Select_Natural_Person_Type_Applicat": "Natural Person",
+        "error_Type_Applicat": "The type of applicant is required",
+
+        "section_Corporate_Name": "Corporate Name",
+        "placeholder_Corporate_Name": "Your company's corporate name",
+        "error_Corporate_Name": "The corporate name is required",
+
+        "section_User_Name": "First Name",
+        "placeholder_User_Name": "What is your first name?",
+        "error_User_Name": "Your first name is required",
+
+        "section_Last_Name": "Last Name",
+        "placeholder_Last_Name": "What is your last name?",
+        "error_Last_Name": "Your last name is required",
+        
+        "section_Email": "Email",
+        "placeholder_Email": "What is your email?",
+        "error_Email": "Your email is required",
+        
+        "section_Phone": "Cell Phone",
+        "placeholder_Phone": "What is your cell phone number?",
+        "error_Phone": "Your cell phone number is required",
+
+
+
+        "subtitle_Product_Quotes": "Product Quotation",
+        "column_Class": "Class",
+        "column_Category": "Category",
+        "column_Type": "Type",
+        "column_Manufacturer": "Manufacturer",
+        "column_Item": "Product",
+        "column_Quantity": "Quantity",
+        "column_Selling_Price": "Price",
+        "column_Action": "Actions",
+        "message_Unrelated_Items": "You have no products added",
+        "add_Product": "Add product",
+        
+        "subtitle_Services_Quotes": "Service Quotation",
+        "message_Unrelated_Services": "You have no services added",
+        "add_Service": "Add service",
+        
+        "textarea": "Comments",
+        "placeholder_Textarea": "Description of your request",
+        "textarea_Characters_Remaining": "characters remaining",
+        "error_Textarea": "The description is required",
+    
+        "section_Accepted_Policy": "I have read and accept the",
+        "section_Link_Accepted_Policy": "Terms and Conditions along with the Personal Data Processing Policy",
+        "text_Danger_Accepted_Policy": "Accepting the terms and conditions is required",
+
+        "button_Send": "Send"
+    }
+}
