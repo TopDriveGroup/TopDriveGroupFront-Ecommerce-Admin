@@ -15,7 +15,7 @@ import {
 //LOGIN DE USUARIOS
 export const loginUser = (loginData: { email: string; password: string }) => async (dispatch: AppDispatch) => {
     try {
-        const response = await axiosInstance.post('/auth/login', loginData);
+        const response = await axiosInstance.post('/auth/user-platform-login', loginData);
         jsCookie.set('token', response.data.token); 
         dispatch(loginStart(response.data.serResult));
     } catch (error: any) {

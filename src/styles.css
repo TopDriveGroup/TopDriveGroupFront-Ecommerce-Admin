@@ -8,3 +8,11 @@
 ::-webkit-scrollbar-thumb {
     background: #e4002b;
 }
+
+/* NOTIFICACIONES */
+.notification__Container {
+    position: fixed;
+    bottom: 80px;
+    right: 100px;
+    z-index: 1000;
+}

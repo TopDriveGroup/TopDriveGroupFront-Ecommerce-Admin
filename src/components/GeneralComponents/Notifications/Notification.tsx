@@ -9,7 +9,7 @@ interface NotificationProps {
 function Notification({ type, message, onClose }: NotificationProps) {
 
     return (
-        <div className={`${styles.notification} ${type} d-flex align-items-start overflow-hidden position-absolute`}>
+        <div className={`${styles.notification} ${type} d-flex align-items-center justify-content-start overflow-hidden position-absolute`}>
             <p className={`${styles[type]} m-0 p-2 d-flex align-items-center justify-content-start`}>{message}</p>
             <div className={`${styles.container__Close_Button} pt-1`}>
                 <button className={`${styles.close__Button} border-0`} onClick={onClose}>X</button>
