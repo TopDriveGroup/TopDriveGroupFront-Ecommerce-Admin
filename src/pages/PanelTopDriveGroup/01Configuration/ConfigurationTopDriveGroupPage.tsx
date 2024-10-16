@@ -1,5 +1,5 @@
 //ELEMENTOS DEL COMPONENTE
-import NavBarTopDriveGroup from '../../../components/PanelTopDriveGroup/01NavBar/NavBar';
+import NavBar from '../../../components/PanelTopDriveGroup/01NavBar/NavBar';
 import SideBar from '../../../components/PanelTopDriveGroup/SideBar/SideBar';
 import Footer from '../../../components/PanelTopDriveGroup/Footer/Footer';
 import styles from './styles.module.css';
@@ -8,7 +8,7 @@ function ConfigurationTopDriveGroupPage() {
 
     return (
         <div>
-            <NavBarTopDriveGroup />
+            <NavBar />
             <div className={`${styles.container} d-flex align-items-start justify-content-center`}>
                 <SideBar />
                 <div className={`${styles.container__Component} p-4`}>
