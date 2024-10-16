@@ -7,12 +7,12 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-left: none;
-    height: 100px;
+    height: 70px;
     width: 350px;
-    /* animation: slideIn 0.5s ease-out, vibrate 0.5s linear 0.5s; */
+    animation: slideIn 0.5s ease-out;
 }
 
-/* @keyframes slideIn {
+@keyframes slideIn {
     from {
         transform: translateX(100%);
         opacity: 0;
@@ -23,23 +23,6 @@
     }
 }
 
-@keyframes vibrate {
-    0% {
-        transform: translateX(0) translateY(0);
-    }
-    25% {
-        transform: translateX(-5px) translateY(-5px);
-    }
-    50% {
-        transform: translateX(5px) translateY(5px);
-    }
-    75% {
-        transform: translateX(-5px) translateY(-5px);
-    }
-    100% {
-        transform: translateX(0) translateY(0);
-    }
-} */
 .success {
     border-left: 7px solid #4caf50;
     width: 330px;
