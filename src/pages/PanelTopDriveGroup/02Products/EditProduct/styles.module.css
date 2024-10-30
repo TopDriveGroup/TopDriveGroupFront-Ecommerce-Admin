@@ -1,6 +1,6 @@
 .container {
     min-height: calc(100vh - 200px);
-    margin: 110px auto 0 auto;
+    margin: 40px auto 0 auto;
 }
 .container__Component {
     width: calc(100% - 250px);
