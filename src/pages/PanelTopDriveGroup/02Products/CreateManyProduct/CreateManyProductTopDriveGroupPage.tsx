@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
 import jsCookie from 'js-cookie';
 import * as XLSX from 'xlsx';
 //REDUX
@@ -17,8 +17,8 @@ import styles from './styles.module.css';
 function CreateManyProductTopDriveGroupPage() {
     const token = jsCookie.get('token') || '';
     const dispatch: AppDispatch = useDispatch();
-    const navigate = useNavigate();
-    const [shouldNavigate, setShouldNavigate] = useState(false);
+    // const navigate = useNavigate();
+    // const [shouldNavigate, setShouldNavigate] = useState(false);
 
     const [excelData, setExcelData] = useState<Array<{ [key: string]: any }> | null>(null);
     const [headers, setHeaders] = useState<string[]>([]);
@@ -37,55 +37,19 @@ function CreateManyProductTopDriveGroupPage() {
                 const parsedData: any[] = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
                 const spanishColumnNames: { [key: string]: string } = {
-                    "Código SAP": "sap",
-                    "Descripción": "description",
-                    "Descripción del fabricante": "descriptionManufacturer",
-                    "Clase": "class",
-                    "Categoría": "category",
-                    "Tipo": "type",
-                    "Grupo": "group",
-                    "Fabricante": "manufacturer",
+                    "Código SAP": "itemCode",
+                    "Descripción del artículo": "itemName",
+                    "Código grupo": "itemsGroupCode",
+                    "Grupo": "itemsGroup",
+                    "Referencia": "supplierCatalogNo",
+                    "Código fabricante": "manufacturerCode",
+                    "Descripción del fabricante": "manufacturerDescription",
                     "Unidad de medida": "unitMeasure",
-                    "Inventario": "inventory",
-                    "Familia": "family",
-                    "Serie": "series",
-                    "Referencia": "reference",
-                    "Activo": "active",
-                    "Tipo de tensión": "tensionType",
-                    "Mínimo de tensión": "minimumTension",
-                    "Máximo de tensión": "maximumTension",
-                    "Corriente de entrada": "inputCurrent",
-                    "Corriente de salida": "outputCurrent",
-                    "Potencia": "power",
-                    "Voltage de potencia": "powerVoltage",
-                    "Caballaje": "horsepower",
-                    "Voltaje de Caballaje": "horsepowerVoltage",
-                    "Frecuencia": "frequency",
-                    "Polos": "poles",
-                    "Tamaño": "size",
-                    "Alto": "high",
-                    "Ancho": "width",
-                    "Profundo": "deep",
-                    "Peso": "weight",
-                    "Montaje": "mounting",
-                    "Conexión": "connection",
-                    "Eficiencia": "efficiency",
-                    "IP": "ip",
-                    "Norma": "standard",
-                    "Protocolo": "protocol",
-                    "Aplicaciones": "applications",
-                    "Pagina": "page",
-                    "WEB": "web",
-                    "Datasheet": "datasheet",
+                    "En stock": "inStockBODCELMP",
+                    "Comprometido": "committedBODCELMP",
+                    "Precio": "sellingPrice",
                     "Imagen principal": "mainImage",
                     "Imagen secundaria": "secondaryImage",
-                    "Otras imágenes": "otherImages",
-                    "largo": "long",
-                    "Precio de compra": "purchasePrice",
-                    "IVA": "iva",
-                    "Precio venta distribuidor": "sellingPriceDistributor",
-                    "Precio venta integrador": "sellingPriceIntegrators",
-                    "Precio venta usuario final": "sellingPriceFinalUser",
                 };
 
                 const originalHeaders: string[] = parsedData[0] || [];
@@ -112,55 +76,19 @@ function CreateManyProductTopDriveGroupPage() {
 
     // Función para traducir los nombres de las columnas de inglés a español
     const englishToSpanishColumnNames: { [key: string]: string } = {
-        "sap": "Código SAP",
-        "description": "Descripción",
-        "descriptionManufacturer": "Descripción del fabricante",
-        "class": "Clase",
-        "category": "Categoría",
-        "type": "Tipo",
-        "group": "Grupo",
-        "manufacturer": "Fabricante",
+        "itemCode": "Código SAP",
+        "itemName": "Descripción del artículo",
+        "itemsGroupCode": "Código grupo",
+        "itemsGroup": "Grupo",
+        "supplierCatalogNo": "Referencia",
+        "manufacturerCode": "Código fabricante",
+        "manufacturerDescription": "Descripción del fabricante",
         "unitMeasure": "Unidad de medida",
-        "inventory": "Inventario",
-        "family": "Familia",
-        "series": "Serie",
-        "reference": "Referencia",
-        "active": "Activo",
-        "tensionType": "Tipo de tensión",
-        "minimumTension": "Mínimo de tensión",
-        "maximumTension": "Máximo de tensión",
-        "inputCurrent": "Corriente de entrada",
-        "outputCurrent": "Corriente de salida",
-        "power": "Potencia",
-        "powerVoltage": "Voltage de potencia",
-        "horsepower": "Caballaje",
-        "horsepowerVoltage": "Voltaje de Caballaje",
-        "frequency": "Frecuencia",
-        "poles": "Polos",
-        "size": "Tamaño",
-        "high": "Alto",
-        "width": "Ancho",
-        "deep": "Profundo",
-        "weight": "Peso",
-        "mounting": "Montaje",
-        "connection": "Conexión",
-        "efficiency": "Eficiencia",
-        "ip": "IP",
-        "standard": "Norma",
-        "protocol": "Protocolo",
-        "applications": "Aplicaciones",
-        "page": "Pagina",
-        "web": "WEB",
-        "datasheet": "Datasheet",
+        "inStockBODCELMP": "En stock",
+        "committedBODCELMP": "Comprometido",
+        "sellingPrice": "Precio",
         "mainImage": "Imagen principal",
         "secondaryImage": "Imagen secundaria",
-        "otherImages": "Otras imágenes",
-        "long": "Largo",
-        "purchasePrice": "Precio de compra",
-        "iva": "IVA",
-        "sellingPriceDistributor": "Precio venta distribuidor",
-        "sellingPriceIntegrators": "Precio venta integrador",
-        "sellingPriceFinalUser": "Precio venta usuario final",
     };
 
     // Función para preparar los datos del formulario antes de enviarlos a Redux
@@ -171,72 +99,37 @@ function CreateManyProductTopDriveGroupPage() {
 
         return nonEmptyRows.map(product => {        
             const productPrepare: IProduct = {
-                sap: product.sap.toString(),
-                description: product.description,
-                descriptionManufacturer: product.descriptionManufacturer,
-                class: product.class,
-                category: product.category,
-                type: product.type,
-                group: product.group,
-                manufacturer: product.manufacturer,
-                unitMeasure: product.unitMeasure,
-                inventory: product.inventory,
-                family: product.family,
-                series: product.series,
-                reference: product.reference,
-                active: product.active,
-                tensionType: product.tensionType,
-                frequency: product.frequency,
-                minimumTension: product.minimumTension.toString(),
-                maximumTension: product.maximumTension.toString(),
-                inputCurrent: product.inputCurrent,
-                outputCurrent: product.outputCurrent,
-                power: product.power,
-                powerVoltage: product.powerVoltage.toString(),
-                horsepower: product.horsepower,
-                horsepowerVoltage: product.horsepowerVoltage.toString(),
-                poles: product.poles.toString(),
-                size: product.size,
-                high: product.high,
-                width: product.width,
-                deep: product.deep.toString(),
-                weight: product.weight.toString(),
-                mounting: product.mounting,
-                connection: product.connection,
-                efficiency: product.efficiency,
-                ip: product.ip.toString(),
-                standard: product.standard,
-                protocol: product.protocol,
-                applications: product.applications,
-                page: product.page.toString(),
-                web: product.web,
-                datasheet: product.datasheet,
+                itemCode: product.itemCode,
+                itemName: product.itemName,
+                itemsGroupCode: product.itemsGroupCode,
+                itemsGroup: product.itemsGroup,
+                supplierCatalogNo: product.supplierCatalogNo,
+                manufacturerCode: product.manufacturerCode,
+                manufacturerDescription: product.manufacturerDescription,
+                unitMeasure: product.unitMeasure,                
+                inStockBODCELMP: product.inStockBODCELMP,
+                committedBODCELMP: product.committedBODCELMP,
+                sellingPrice: product.sellingPrice,
                 mainImage: product.mainImage,
                 secondaryImage: product.secondaryImage,
-                otherImages: product.otherImages,
-                long: product.long,
-                purchasePrice: product.purchasePrice,
-                iva: product.iva,
-                sellingPriceDistributor: product.sellingPriceDistributor,
-                sellingPriceIntegrators: product.sellingPriceIntegrators,
-                sellingPriceFinalUser: product.sellingPriceFinalUser,
             };
             return productPrepare;
         });
     };
 
-    useEffect(() => {
-        if (shouldNavigate) {
-            navigate('/panel-top-drive-group/products/consult');
-        }
-    }, [shouldNavigate, navigate]);
+    // useEffect(() => {
+    //     if (shouldNavigate) {
+    //         navigate('/panel-top-drive-group/products/consult');
+    //     }
+    // }, [shouldNavigate, navigate]);
 
     const onSubmit = async () => {
         if (excelData) {
             const formData = prepareFormData(excelData);
+            console.log('formData: ', formData)
             await dispatch(postManyProducts(formData, token));
             setMessage('Los productos se han creado correctamente.');
-            setShouldNavigate(true);
+            // setShouldNavigate(true);
         } else {
             setMessage('No se han encontrado datos válidos para procesar.');
         }
@@ -248,7 +141,7 @@ function CreateManyProductTopDriveGroupPage() {
             <div className={`${styles.container} d-flex`}>
                 <SideBar />
                 <div className={`${styles.container__Component} p-4`}>
-                    <h2 className={`${styles.main__Title} mb-3 text-start}`}>Crear productos masivamente</h2>
+                    <h2 className={`${styles.main__Title} mb-3 text-start}`}>Crear productos masivamente ss</h2>
 
                     <div className={`${styles.container__Product} m-auto d-flex flex-column align-items-center justify-content-between gap-4`}>
                         <div className={`${styles.containerDownloadFile} mt-3 mb-3 p-2 d-flex align-items-center justify-content-between border rounded`}>

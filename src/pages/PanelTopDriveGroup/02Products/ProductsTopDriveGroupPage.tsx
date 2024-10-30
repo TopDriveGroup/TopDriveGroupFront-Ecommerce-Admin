@@ -94,9 +94,7 @@ function ProductsTopDriveGroupPage() {
 
                     {Array.isArray(products) && products.length > 0 && (
                         <div className={`${styles.container__Header_Result_and_See} mb-3 d-flex align-items-center justify-content-between`}>
-                            <div>
-                                {products.length === 1 ? `${products.length} resultado` : `${products.length} resultados`}
-                            </div>
+                            {products.length === 1 ? `${products.length} resultado` : `${products.length} resultados`}
                             <div className={`${styles.container__Order_And_view} d-flex`}>
                                 <div className={`${styles.container__Order_By} d-flex`}>
                                     <span>Ordenar por:</span>

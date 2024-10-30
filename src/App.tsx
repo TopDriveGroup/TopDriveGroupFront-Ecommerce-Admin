@@ -16,6 +16,7 @@ import ProtectedRoute from './ProtectedRoute';
 //PANEL TOP DRIVE
 import ConfigurationTopDriveGroupPage from './pages/PanelTopDriveGroup/01Configuration/ConfigurationTopDriveGroupPage';
 import ProductsTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/ProductsTopDriveGroupPage';
+import ProductsSapTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/ProductsSapTopDriveGroup/ProductsSapTopDriveGroupPage';
 import CreateProductTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/CreateProduct/CreateProductTopDriveGroupPage';
 import CreateManyProductTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/CreateManyProduct/CreateManyProductTopDriveGroupPage';
 import EditProductTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/EditProduct/EditProductTopDriveGroupPage';
@@ -63,6 +64,7 @@ function App() {
                         <Route path='/panel-top-drive-group/configuration/user-management' element={<ConfigurationTopDriveGroupPage />} />
                         {/* ----------SIDEBAR TOP DRIVE - PRODUCTS---------- */}
                         <Route path='/panel-top-drive-group/products/consult' element={<ProductsTopDriveGroupPage />} />
+                        <Route path='/panel-top-drive-group/products/consult-sap' element={<ProductsSapTopDriveGroupPage />} />
                         <Route path='/panel-top-drive-group/products/create-product' element={<CreateProductTopDriveGroupPage />} />
                         <Route path='/panel-top-drive-group/products/create-many-products' element={<CreateManyProductTopDriveGroupPage />} />
                         <Route path='/panel-top-drive-group/products/edit-product/:idProduct' element={<EditProductTopDriveGroupPage />} />

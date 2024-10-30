@@ -1,0 +1,73 @@
+.container {
+    min-height: calc(100vh - 120px);
+    margin: 40px auto 0 auto;
+}
+.container__Component {
+    width: calc(100% - 250px);
+}
+.main__Title {
+    font-weight: 600;
+    color: #e4002b;
+}
+.productTable {
+    width: 900px;
+}
+.header {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.titles {
+    text-align: center;
+}
+.container__Data {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.data__In_Sap {
+    width: 700px;
+}
+.itemCode {
+    font-weight: 600;
+}
+.container__Columns {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid red;
+    width: 100%;
+}
+.column__Top {
+    border: 1px solid green;
+    width: 100%;
+}
+
+
+
+.column__Bottom {
+    border: 1px solid green;
+    width: 100%;
+}
+.dup {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+.row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+.row__Total {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100px;
+}
+.dup__Right {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.row__Right {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+.row:last-child, .row__Right:last-child {
+    border-bottom: none;
+}
+.data {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    width: 200px;
+}

@@ -1,7 +1,7 @@
 .container {
     min-height: calc(100vh - 120px);
     color: #495057;
-    margin: 110px auto 0 auto;
+    margin: 40px auto 0 auto;
 }
 
 /* PRODUCTOS FILTRADOS */
