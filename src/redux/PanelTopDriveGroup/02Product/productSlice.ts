@@ -48,6 +48,12 @@ const productSlice = createSlice({
             state.errorProduct = null;
             state.searchCompleted = true;
         },
+        //OBTENER TODOS LOS PRODUCTOS
+        getAllProductStart: (state, action: PayloadAction<IProduct | IProduct[]>) => {
+            state.loading = false;
+            state.products = action.payload;
+            state.errorProduct = null;
+        },
         //OBTENER UN PRODUCTO POR ID
         getProductByIdStart: (state, action: PayloadAction<IProduct>) => {
             state.loading = false;
@@ -90,5 +96,5 @@ const productSlice = createSlice({
     },
 });
 
-export const { setProductData, setErrorProduct, postProductStart, getProductsStart, getProductByIdStart, putProductStart, deleteProductStart, patchLogicalDeleteProductStart, patchActivateLogicalDeleteProductStart, getProductsLogicalStart, postManyProductsStart } = productSlice.actions;
+export const { setProductData, setErrorProduct, postProductStart, getProductsStart, getAllProductStart, getProductByIdStart, putProductStart, deleteProductStart, patchLogicalDeleteProductStart, patchActivateLogicalDeleteProductStart, getProductsLogicalStart, postManyProductsStart } = productSlice.actions;
 export default productSlice.reducer;

@@ -122,6 +122,12 @@ function SideBar() {
                             Todos los productos
                         </Link>
                         <Link
+                            to='/panel-top-drive-group/products/consult-sap'
+                            className={`${styles.link__Sub_Menu} ${location.pathname === '/panel-top-drive-group/products/consult-sap' ? styles.active__Sub_Menu : ''} text-decoration-none`}
+                        >
+                            Productos de SAP
+                        </Link>
+                        <Link
                             to='/panel-top-drive-group/products/create-product'
                             className={`${styles.link__Sub_Menu} ${location.pathname === '/panel-top-drive-group/products/create-product' ? styles.active__Sub_Menu : ''} text-decoration-none`}
                         >

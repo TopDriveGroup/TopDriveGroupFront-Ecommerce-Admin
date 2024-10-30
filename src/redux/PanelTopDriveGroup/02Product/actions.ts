@@ -2,7 +2,7 @@
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
 import { IProduct } from '../../../types/product.types';
-import { setProductData, setErrorProduct, postProductStart, postManyProductsStart, getProductsStart, getProductByIdStart, putProductStart, deleteProductStart, patchLogicalDeleteProductStart, patchActivateLogicalDeleteProductStart, getProductsLogicalStart,  } from './productSlice';
+import { setProductData, setErrorProduct, postProductStart, postManyProductsStart, getProductsStart, getAllProductStart, getProductByIdStart, putProductStart, deleteProductStart, patchLogicalDeleteProductStart, patchActivateLogicalDeleteProductStart, getProductsLogicalStart,  } from './productSlice';
 
 //CREAR UN PRODUCTO
 export const postProduct = (formData: IProduct, token: string) => async (dispatch: AppDispatch) => {
@@ -64,6 +64,25 @@ export const getProducts = (token: string, page: number = 1, limit?: number) => 
             totalPages: response.data.totalPages,
             currentPage: page,
         }));
+    } catch (error: any) {
+        if (error.response && error.response.status === 401) {
+            dispatch(setErrorProduct(error.response?.data.message));
+        } else {
+            dispatch(setErrorProduct(error.message));
+        }
+    }
+};
+
+//OBTENER TODOS LOS PRODUCTOS INCLUYENDO LOS DE BORRADO LOGICO
+export const getAllProduct = (token: string) => async (dispatch: AppDispatch) => {
+    try {
+        const response = await axiosInstance.get(`/ecommerce/products-with-units`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            }
+        });
+        dispatch(getAllProductStart(response.data.result));
     } catch (error: any) {
         if (error.response && error.response.status === 401) {
             dispatch(setErrorProduct(error.response?.data.message));
