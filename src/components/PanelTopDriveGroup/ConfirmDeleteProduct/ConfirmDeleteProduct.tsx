@@ -1,8 +1,8 @@
 import jsCookie from 'js-cookie';
 //REDUX
 import { useDispatch } from 'react-redux';
-import { deleteProduct, getProducts } from '../../../redux/PanelTopDriveGroup/02Product/actions';
 import type { AppDispatch } from '../../../redux/store';
+import { deleteProduct, getProducts } from '../../../redux/PanelTopDriveGroup/02Product/actions';
 import styles from './styles.module.css';
 
 interface ConfirmDeleteProductProps {

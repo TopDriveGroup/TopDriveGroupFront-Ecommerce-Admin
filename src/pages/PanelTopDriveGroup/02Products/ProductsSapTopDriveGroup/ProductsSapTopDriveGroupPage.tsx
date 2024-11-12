@@ -1,30 +1,25 @@
-import { useEffect, useMemo } from 'react';
-import jsCookie from 'js-cookie';
-// REDUX
+import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllProduct } from '../../../../redux/PanelTopDriveGroup/02Product/actions';
 import type { RootState, AppDispatch } from '../../../../redux/store';
-// ELEMENTOS DEL COMPONENTE
+import { getAllProduct } from '../../../../redux/PanelTopDriveGroup/02Product/actions';
 import { IProduct, IProductsOrdered } from '../../../../types/product.types';
 import NavBar from '../../../../components/PanelTopDriveGroup/01NavBar/NavBar';
-import Footer from '../../../../components/PanelTopDriveGroup/Footer/Footer';
+import Loading from '../../../../components/GeneralComponents/ComponentLoading/Loading';
+import Paginated from '../../../../components/GeneralComponents/Paginated/Paginated';
 import SideBar from '../../../../components/PanelTopDriveGroup/SideBar/SideBar';
+import Footer from '../../../../components/PanelTopDriveGroup/Footer/Footer';
 import styles from './styles.module.css';
 
 function ProductsSapTopDriveGroupPage() {
-    const token = jsCookie.get("token");
     const dispatch: AppDispatch = useDispatch();
-    const products = useSelector((state: RootState) => state.products.products);
+    const { products, loading, errorProduct, totalProducts } = useSelector((state: RootState) => state.products);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsByPage, setItemsByPage] = useState<number>(100);
 
     useEffect(() => {
-        if (token) {
-            try {
-                dispatch(getAllProduct(token));
-            } catch (error) {
-                console.error('Error al traer los productos', error);
-            }
-        }
-    }, [dispatch, token]);
+        dispatch(getAllProduct(currentPage, itemsByPage));
+    }, [dispatch, currentPage, itemsByPage]);
 
     const productsOrdered = useMemo(() => {
         const itemCodesPresent = Array.isArray(products)
@@ -53,6 +48,15 @@ function ProductsSapTopDriveGroupPage() {
         return combinedCodes.sort((a, b) => parseInt(a.code) - parseInt(b.code));
     }, [products]);
 
+    const handleItemsByPage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setItemsByPage(Number(event.target.value));
+        setCurrentPage(1);  // Reinicia la página al cambiar el número de items por página
+    };
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+    };
+
     return (
         <div>
             <NavBar />
@@ -60,79 +64,57 @@ function ProductsSapTopDriveGroupPage() {
                 <SideBar />
                 <div className={`${styles.container__Component} p-4 d-flex flex-column align-items-start justify-content-start`}>
                     <h2 className={`${styles.main__Title} mb-3`}>Productos de SAP</h2>
-                    <table className={`${styles.productTable}`}>
-                        <thead className={`${styles.header}`}>
-                            <tr className={`${styles.container__Titles} `}>
-                                <th className={`${styles.titles} p-2`}>En SAP</th>
-                                <th className={`${styles.titles} p-2`}>Faltante en SAP</th>
-                            </tr>
-                        </thead>
-                        <tbody className={`${styles.body} `}>
-                            {productsOrdered.map(({ code, type, product }, index) => (
-                                <tr key={index} className={`${styles.container__Data} `}>
-                                    <td className={`${styles.data__In_Sap} d-flex flex-column align-items-start justify-content-start`}>
-                                        <span className={`${styles.itemCode} p-1`}>{type === 'enSAP' ? `Producto: ${code}` : ''} {}</span>
-                                        <div className={`${styles.container__Columns} d-flex flex-column`}>
-                                            <div className={`${styles.column__Top} mb-4 d-flex flex-column align-items-start justify-content-start`}>
-                                                <p className='m-0'>Stock - Entrega de 2 a 4 días hábiles</p>
-                                                <p className='m-0'>Stock: {(product?.inStockBODCELMP || 0) + (product?.inStockBODCOT01 || 0) + (product?.inStockBODCOT02 || 0) + (product?.inStockBODZF04 || 0) + (product?.inStockBODZF05 || 0) + (product?.inStockBOGCALI || 0)}</p>
-                                                <p className='m-0'>Comprometido: {(product?.committedBODCELMP || 0) + (product?.committedBODCOT01 || 0) + (product?.committedBODCOT02 || 0) + (product?.committedBODZF04 || 0) + (product?.committedBODZF05 || 0) + (product?.committedBOGCALI || 0)}</p>
-                                                <div className={`${styles.dup} d-flex flex-column align-items-start justify-content-start w-100`}>
-                                                    <div className='d-flex w-100'>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Stock Celta: ${product?.inStockBODCELMP || 0}` : 0}</span>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Comprom Celta: ${product?.committedBODCELMP || 0}` : 0}</span>
-                                                        <span className={`${styles.row__Total} p-1`}>Total: {(product?.inStockBODCELMP || 0) - (product?.committedBODCELMP || 0)}</span>
-                                                    </div>
-                                                    <div className='d-flex w-100'>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Stock Cota Ppal: ${product?.inStockBODCOT01 || 0}` : 0}</span>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Comprom Cota Ppal: ${product?.committedBODCOT01 || 0}` : 0}</span>
-                                                        <span className={`${styles.row__Total} p-1`}>Total: {(product?.inStockBODCOT01 || 0) - (product?.committedBODCOT01 || 0)}</span>
-                                                    </div>
-                                                    <div className='d-flex w-100'>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Stock Cota Mzz: ${product?.inStockBODCOT02 || 0}` : 0}</span>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Comprom Cota Mzz: ${product?.committedBODCOT02 || 0}` : 0}</span>
-                                                        <span className={`${styles.row__Total} p-1`}>Total: {(product?.inStockBODCOT02 || 0) - (product?.committedBODCOT02 || 0)}</span>
-                                                    </div>
-                                                    <div className='d-flex w-100'>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Stock Intex Nacionalizado: ${product?.inStockBODZF04 || 0}` : 0}</span>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Comprom Intex Nacionalizado: ${product?.committedBODZF04 || 0}` : 0}</span>
-                                                        <span className={`${styles.row__Total} p-1`}>Total: {(product?.inStockBODZF04 || 0) - (product?.committedBODZF04 || 0)}</span>
-                                                    </div>
-                                                    <div className='d-flex w-100'>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Stock Carta Nacionalizado: ${product?.inStockBODZF05 || 0}` : 0}</span>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Comprom Carta Nacionalizado: ${product?.committedBODZF05 || 0}` : 0}</span>
-                                                        <span className={`${styles.row__Total} p-1`}>Total: {(product?.inStockBODZF05 || 0) - (product?.committedBODZF05 || 0)}</span>
-                                                    </div>
-                                                    <div className='d-flex w-100'>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Stock Cali: ${product?.inStockBOGCALI || 0}` : 0}</span>
-                                                        <span className={`${styles.row} p-1`}>{type === 'enSAP' ? `Comprom Cali: ${product?.committedBOGCALI || 0}` : 0}</span>
-                                                        <span className={`${styles.row__Total} p-1`}>Total: {(product?.inStockBOGCALI || 0) - (product?.committedBOGCALI || 0)}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.column__Bottom} d-flex flex-column align-items-start justify-content-start`}>
-                                                <p className='m-0'>Por nacionalizar - Entrega de 4 a 6 semanas</p>
-                                                <p className='m-0'>Stock: {(product?.inStockBODINT || 0) + (product?.inStockBODZF01 || 0) + (product?.inStockBODZF02 || 0) + (product?.inStockBODZF03 || 0)}</p>
-                                                <p className='m-0'>Comprometido: {(product?.committedBODINT || 0) + (product?.committedBODZF01 || 0) + (product?.committedBODZF02 || 0) + (product?.committedBODZF03 || 0)}</p>
-                                                <div className={`${styles.dup__Right} d-flex flex-column align-items-start justify-content-start w-100`}>
-                                                    <span className={`${styles.row__Right} p-1`}>{type === 'enSAP' ? `Stock Bdga Int Fisico: ${product?.inStockBODINT || 0}` : 0}</span>
-                                                    <span className={`${styles.row__Right} p-1`}>{type === 'enSAP' ? `Stock ZF Bogotá: ${product?.inStockBODZF01 || 0}` : 0}</span>
-                                                    <span className={`${styles.row__Right} p-1`}>{type === 'enSAP' ? `Stock ZF Cartagena: ${product?.inStockBODZF02 || 0}` : 0}</span>
-                                                    <span className={`${styles.row__Right} p-1`}>{type === 'enSAP' ? `Stock ZF Intex Cota: ${product?.inStockBODZF03 || 0}` : 0}</span>
-                                                    <span className={`${styles.row__Right} p-1`}>{type === 'enSAP' ? `Comprom Bdga Int Fisico: ${product?.committedBODINT || 0}` : 0}</span>
-                                                    <span className={`${styles.row__Right} p-1`}>{type === 'enSAP' ? `Comprom ZF Bogotá: ${product?.committedBODZF01 || 0}` : 0}</span>
-                                                    <span className={`${styles.row__Right} p-1`}>{type === 'enSAP' ? `Comprom ZF Cartagena: ${product?.committedBODZF02 || 0}` : 0}</span>
-                                                    <span className={`${styles.row__Right} p-1`}>{type === 'enSAP' ? `Comprom ZF Intex Cota: ${product?.committedBODZF03 || 0}` : 0}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className={`${styles.data} mb-2 p-1`}>{type === 'faltante' ? `Producto: ${code}` : ''}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    {loading ? (
+                        <div className={`${styles.container__Loading} d-flex align-items-center justify-content-center`}>
+                            <Loading />
+                        </div>
+                    ) : errorProduct ? (
+                        <p>Error: {errorProduct.join(', ')}</p>
+                    ) : (
+                        <div>
+                            <div className={`${styles.container__Paginated} d-flex align-items-center justify-content-end gap-2`}>
+                                <Paginated
+                                    totalProducts={totalProducts}
+                                    limit={itemsByPage}
+                                    onPageChange={handlePageChange}
+                                    currentPage={currentPage}
+                                />
+                                <div className={`${styles.container__Items_By_page} d-flex align-items-center justify-content-center`}>
+                                    <span>Ver:</span>
+                                    <div className={`${styles.select__Items_By_page} mx-2`}>
+                                        <select
+                                            className={`${styles.select} p-1 border-0`}
+                                            value={itemsByPage}
+                                            onChange={handleItemsByPage}
+                                        >
+                                            <option value={100}>100</option>
+                                            <option value={500}>500</option>
+                                            <option value={1000}>1000</option>
+                                        </select>
+                                    </div>
+                                    <span>por página</span>
+                                </div>
+                            </div>
+                            <table className={`${styles.productTable}`}>
+                                <thead className={`${styles.header}`}>
+                                    <tr className={`${styles.container__Titles}`}>
+                                        <th className={`${styles.titles} p-2`}>En SAP</th>
+                                        <th className={`${styles.titles} p-2`}>Faltante en SAP</th>
+                                    </tr>
+                                </thead>
+                                <tbody className={`${styles.body}`}>
+                                    {productsOrdered.map(({ code, type }, index) => (
+                                        <tr key={`${code}-${index}`} className={`${styles.container__Data}`}>
+                                            <td className={`${styles.data__In_Sap} d-flex flex-column align-items-start justify-content-start`}>
+                                                <span className={`${styles.itemCode} p-1`}>{type === 'enSAP' ? `Producto: ${code}` : ''}</span>
+                                            </td>
+                                            <td className={`${styles.data} mb-2 p-1`}>{type === 'faltante' ? `Producto: ${code}` : ''}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    )}
                 </div>
             </div>
             <Footer />

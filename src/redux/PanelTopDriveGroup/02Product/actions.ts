@@ -74,15 +74,21 @@ export const getProducts = (token: string, page: number = 1, limit?: number) => 
 };
 
 //OBTENER TODOS LOS PRODUCTOS INCLUYENDO LOS DE BORRADO LOGICO
-export const getAllProduct = (token: string) => async (dispatch: AppDispatch) => {
+export const getAllProduct = (page: number = 1, limit: number = 100) => async (dispatch: AppDispatch) => {
+    dispatch(setProductData());
     try {
-        const response = await axiosInstance.get(`/ecommerce/products-with-units`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json",
-            }
+        const response = await axiosInstance.get(`/ecommerce/all-products-paginated`, {
+            params: {
+                page,
+                limit,
+            },
         });
-        dispatch(getAllProductStart(response.data.result));
+        dispatch(getAllProductStart({
+            products: response.data.result,
+            totalProducts: response.data.totalProducts,
+            totalPages: response.data.totalPages,
+            currentPage: page,
+        }));
     } catch (error: any) {
         if (error.response && error.response.status === 401) {
             dispatch(setErrorProduct(error.response?.data.message));
