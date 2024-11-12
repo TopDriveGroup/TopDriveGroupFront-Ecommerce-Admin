@@ -5,7 +5,161 @@
 .container__Component {
     width: calc(100% - 250px);
 }
-.main__Title {
+.main__Title, .icon {
     font-weight: 600;
+    color: #495057;
+}
+.container__Search {
+    height: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.input__Search {
+    width: 400px;
+}
+.input__Search:focus {
+    outline-color: #e4002b;
+}
+.button__Search {
+    right: 0px;
+    height: 95%;
+    width: 50px;
+    background: none;
+}
+.icon__Search {
     color: #e4002b;
+}
+.button__Reset {
+    border: none;
+    height: 35px;
+    width: 150px;
+    color: #f8f9fa;
+    background: #495057;
+}
+.container__Loading {
+    width: 100%;
+}
+.button__Update_Orders {
+    height: 35px;
+    color: #f8f9fa;
+    background: #e4002b;
+}
+
+/* TABLA */
+.container__Table {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+}
+.container__Head {
+    height: 60px;
+    width: 100%;
+    font-weight: 600;
+}
+
+/* TITULOS DE LAS COLUMNAS */
+.container__Tr {
+    height: 60px;
+}
+.container__Tr, .container__Info {
+    flex-wrap: nowrap;
+}
+.date__Order {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 130px;
+    width: 13%;
+}
+.reference {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 300px;
+    width: 26%;
+}
+.client {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 150px;
+    width: 14%;
+}
+.id__Client {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 100px;
+    width: 10%;
+}
+.status {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 100px;
+    width: 10%;
+}
+.state {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 90px;
+    width: 9%;
+}
+.total {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 100px;
+    width: 10%;
+}
+.actions {
+    height: 60px;
+    min-width: 80px;
+    width: 8%;
+}
+/* CONTENIDO DE LA TABLA */
+.container__Body {
+    height: 60px;
+    width: 100%;
+}
+.container__Info {
+    height: 60px;
+}
+.text__Ellipsis {
+    opacity: 0.75;
+    white-space: nowrap;        /* Evita que el texto se divida en varias líneas */
+    text-overflow: ellipsis;    /* Agrega los tres puntos suspensivos */
+}
+.container__Icon_Copy {
+    height: 50px;
+    width: 30px;
+}
+.container__Icon_Copy:hover {
+    cursor: pointer;
+    .icon__Copy {
+        color: #e4002b;
+    }
+}
+.icon__Copy {
+    font-size: 20px;
+    color: #adb5bd;
+}
+.message__Copy {
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: #f8f9fa;
+    top: 5px;
+    right: -160px;
+    width: 150px;
+    padding: 5px;
+}
+.button__Action {
+    color: #6c757d;
+    height: 25px;
+    width: 25px;
+}
+.button__Action:hover {
+    color: #495057;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.message__Unrelated_Items {
+    height: 60px;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-//INTERRACE PARA ENVIAR LA DATA A CREAR SESION EN GOU
-export interface IGouOrderRequest {
+export interface IOrderDetail {
+    _id?: string;
     locale: string;
     buyer: {
         document: string;
@@ -53,128 +53,30 @@ export interface IGouOrderRequest {
     noBuyerFill: boolean;
     captureAddress: boolean;
     paymentMethod?: string | null;
+    requestId?: number;
+    transactionId?: string,
+
+    // MANEJO INTERNO DE LA ORDEN
+    state?: 'Iniciada en pasarela' | 'Rechazada' | 'En preparación' | 'En camino' | 'Entregado' | 'Cancelada' | 'Archivada';
+    status?: 'Pending payment' | 'Rejected' | 'Approved';
+    shippingDate?: Date;
+    total?: number;
+    comment?: string;
+    conveyorShippingOrderNumber?: string;
+    commentConveyorShippingOrderNumber?: string;
+    isArchive?: boolean;
+    cancelMessage?: string;
+    createdAt?: string;
+
+    // RELACIONES CON OTRAS COLECCIONES
+    client?: string;
 }
 
 
-//RESPUESTA DE SESION EN GOU
-// Interfaz de respuesta con las propiedades necesarias
-export interface IGouOrderResponse {
-    status: {
-        status: string;
-        reason: string;
-        message: string;
-        date: Date;  // Cambié a string ya que normalmente las fechas vienen como string
-    };
-    requestId: number;
-    processUrl: string;
-    transactionId?: string;
-    locale: string;
-    buyer: {
-        document: string;
-        documentType: string;
-        name: string;
-        surname: string;
-        company: string;
-        email: string;
-        mobile: number;
-        address?: {
-            street: string;
-            city: string;
-            state: string;
-            postalCode: string;
-            country: string;
-            phone: string;
-        };
-    };
-    payment: {
-        reference: string | null;
-        description: string;
-        amount: {
-            currency: string;
-            total: number;
-            taxes?: {
-                kind?: string;
-                amount?: number;
-                base?: number;
-            }[];
-            details?: {
-                kind?: string;
-                amount?: number;
-            }[];
-        };
-        items: {
-            sku: string;
-            name: string;
-            category: string;
-            qty: number;
-            price: number;
-            tax: number;
-        }[];
-    };
-    expiration?: string | null;
-    ipAddress?: string | null;
-    userAgent: string;
-    returnUrl?: string;
-    cancelUrl?: string;
-    skipResult: boolean;
-    noBuyerFill: boolean;
-    captureAddress: boolean;
-    paymentMethod?: string | null;
 
 
-    result?: {
-        requestId: string;
-        processUrl: string;
-        status: {
-            status: string;
-            message: string;
-            date: string;
-        };
-        request: {
-            buyer: {
-                name: string;
-                email: string;
-                address: {
-                    street: string;
-                    city: string;
-                    state: string;
-                    postalCode: string;
-                };
-            };
-            payment: {
-                reference: string | null;
-                description: string;
-                amount: {
-                    currency: string;
-                    total: number;
-                };
-                items: {
-                    sku: string;
-                    name: string;
-                    qty: number;
-                    price: number;
-                }[];
-            };
-        };
-        payment: {
-            paymentMethodName: string;
-            authorization: string;
-            receipt: string;
-            status: {
-                status: string;
-            };
-            amount: {
-                to: {
-                    total: number;
-                    currency: string;
-                };
-            };
-        }[];
-    };
-}
 
-
-export interface IGouOrderResult {
+export interface IOrderDetailResult {
     code: number;
     requestId?: string;
     result: {

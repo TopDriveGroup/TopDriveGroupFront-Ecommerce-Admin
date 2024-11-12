@@ -176,44 +176,31 @@ function ProductsTopDriveGroupPage() {
                                         <div className="m-0">
                                             <h6 className="m-0">Descripción</h6>
                                             <div>
-                                                <p className={`${styles.title__Product} m-0 overflow-hidden`}>{product.description}</p>
+                                                <p className={`${styles.title__Product} m-0 overflow-hidden`}>{product.itemName}</p>
                                             </div>
                                         </div>
                                         <div className="m-0">
                                             <h6 className="m-0">Código Sap</h6>
                                             <div>
-                                                <p className="m-0">{product.sap}</p>
+                                                <p className="m-0">{product.itemCode}</p>
                                             </div>
                                         </div>
                                         <div className="m-0">
                                             <h6 className="m-0">Precio Distribidor</h6>
                                             <div>
-                                                <p className="m-0">{product.sellingPriceDistributor ? <span>$ {formatNumber(product.sellingPriceDistributor)}</span> : 'No definido'}</p>
+                                                <p className="m-0">{product.sellingPrice ? <span>$ {formatNumber(product.sellingPrice)}</span> : 'No definido'}</p>
                                             </div>
                                         </div>
-                                        <div className="m-0">
-                                            <h6 className="m-0">Precio Integrador</h6>
-                                            <div>
-                                                <p className="m-0">{product.sellingPriceIntegrators ? <span>$ {formatNumber(product.sellingPriceIntegrators)}</span> : 'No definido'}</p>
-                                            </div>
-                                        </div>
-                                        <div className="m-0">
-                                            <h6 className="m-0">Precio Usuario final</h6>
-                                            <div>
-                                                <p className="m-0">{product.sellingPriceFinalUser ? <span>$ {formatNumber(product.sellingPriceFinalUser)}</span> : 'No definido'}</p>
-                                            </div>
-                                        </div>
-                                        <h6 className={`${styles.brand__Product} m-0`}>{product.class} | {product.category} | {product.type}</h6>
                                     </div>
 
                                     <div className={`${styles.container__Section_Images}`}>
                                         <h6>Imágenes</h6>
                                         <div className={`${styles.container__Images} d-flex flex-wrap align-items-start justify-content-between`}>
                                             <div className={`${styles.container__Main_Image} d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                <img src={product.mainImage} alt={`${product.description}`} className={`${styles.images} m-auto`} loading="lazy" />
+                                                <img src={product.mainImage} alt={`${product.itemName}`} className={`${styles.images} m-auto`} loading="lazy" />
                                             </div>
                                             <div className={`${styles.container__Main_Image} d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                <img src={product.secondaryImage} alt={product.description} className={`${styles.images} m-auto`} loading="lazy" />
+                                                <img src={product.secondaryImage} alt={product.itemName} className={`${styles.images} m-auto`} loading="lazy" />
                                             </div>
                                             {Array.isArray(product.otherImages) && product.otherImages.map((image, index) => (
                                                 <div key={`${product._id}-${index}`} className={`${styles.container__Secundaries_Image} d-flex align-items-center justify-content-center`} >
@@ -249,46 +236,33 @@ function ProductsTopDriveGroupPage() {
                                         <div className="m-0">
                                             <h6 className="m-0">Descripción</h6>
                                             <div>
-                                                <p className={`${styles.title__Product} m-0 overflow-hidden`}>{product.description}</p>
+                                                <p className={`${styles.title__Product} m-0 overflow-hidden`}>{product.itemName}</p>
                                             </div>
                                         </div>
                                         <div className="m-0">
                                             <h6 className="m-0">Sap</h6>
                                             <div>
-                                                <p className="m-0">{product.sap}</p>
+                                                <p className="m-0">{product.itemCode}</p>
                                             </div>
                                         </div>
                                         <div className='d-flex gap-4'>
                                             <div className="m-0">
                                                 <h6 className="m-0">Precio Distribidor</h6>
                                                 <div>
-                                                    <p className="m-0">{product.sellingPriceDistributor ? <span>$ {formatNumber(product.sellingPriceDistributor)}</span> : 'No definido'}</p>
-                                                </div>
-                                            </div>
-                                            <div className="m-0">
-                                                <h6 className="m-0">Precio Integrador</h6>
-                                                <div>
-                                                    <p className="m-0">{product.sellingPriceIntegrators ? <span>$ {formatNumber(product.sellingPriceIntegrators)}</span> : 'No definido'}</p>
-                                                </div>
-                                            </div>
-                                            <div className="m-0">
-                                                <h6 className="m-0">Precio Usuario final</h6>
-                                                <div>
-                                                    <p className="m-0">{product.sellingPriceFinalUser ? <span>$ {formatNumber(product.sellingPriceFinalUser)}</span> : 'No definido'}</p>
+                                                    <p className="m-0">{product.sellingPrice ? <span>$ {formatNumber(product.sellingPrice)}</span> : 'No definido'}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h6 className={`${styles.brand__Product} m-0`}>{product.class} | {product.category} | {product.type}</h6>
                                     </div>
 
                                     <div className={`${styles.container__Section_Images_Horizon}`}>
                                         <h6>Imágenes</h6>
                                         <div className={`${styles.container__Images} d-flex flex-wrap align-items-start justify-content-between`}>
                                             <div className={`${styles.container__Main_Image} d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                <img src={product.mainImage} alt={`${product.description}`} className={`${styles.images} m-auto`} loading="lazy" />
+                                                <img src={product.mainImage} alt={`${product.itemName}`} className={`${styles.images} m-auto`} loading="lazy" />
                                             </div>
                                             <div className={`${styles.container__Main_Image} d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                <img src={product.secondaryImage} alt={product.description} className={`${styles.images} m-auto`} loading="lazy" />
+                                                <img src={product.secondaryImage} alt={product.itemName} className={`${styles.images} m-auto`} loading="lazy" />
                                             </div>
                                             {Array.isArray(product.otherImages) && product.otherImages.map((image, index) => (
                                                 <div key={`${product._id}-${index}`} className={`${styles.container__Secundaries_Image} d-flex align-items-center justify-content-center`} >

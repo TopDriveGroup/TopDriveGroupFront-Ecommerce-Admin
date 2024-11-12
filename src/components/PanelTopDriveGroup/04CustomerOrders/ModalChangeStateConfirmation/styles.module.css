@@ -1,0 +1,60 @@
+.title__Modal {
+    color: #888b8d;
+}
+.form {
+    width: 100%;
+}
+.container__Inputs {
+    width: 600px;
+}
+.label {
+    margin-bottom: 2px;
+}
+.input {
+    width: 100%;
+}
+.input:focus, textarea:focus {
+    outline-color: #e4002b;
+}
+.text__Danger {
+    top: 60px;
+}
+.textarea {
+    max-height: 200px;
+    width: 100%;
+}
+.text__Danger_Textarea {
+    width: 600px;
+    top: 160px;
+}
+.alert__Danger {
+    border: 1px solid rgba(230, 57, 70, 0.7);
+    color: #e63946;
+    background: rgba(230, 57, 70, 0.4);
+    border-radius: 5px;
+    top: 10px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 10px;
+    z-index: 1;
+}
+.alert__Success {
+    color: #4c956c;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 5px 10px;
+    z-index: 1;
+    bottom: 40px;
+    left: 50px;
+    right: 50px;
+}
+.container__Loading {
+    width: 100%;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #e4002b;
+    color: #f8f9fa;
+}

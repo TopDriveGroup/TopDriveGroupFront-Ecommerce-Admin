@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
-import { IGouOrderRequest } from '../../../types/gouOrder.types';
-import { setErrorOrder, postGouPaymentOrderStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart, setPaymentsPendingStatusStart, getPaymentsPendingStatusStart } from './customerOrdersSlice';
+import { IOrderDetail, IOrderDetailResult } from '../../../types/orderDetail.types';
+import { setOrderData, setErrorOrder, postGouPaymentOrderStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart, setPaymentsPendingStatusStart, getPaymentsPendingStatusStart, getAllActiveGetawayPaymentTransactionsStart, patchChangeStateConfirmationStart } from './customerOrdersSlice';
 
 //CREA UNA SESION DE PAGO PARA LA ORDEN
-export const postGouPaymentOrder = (formData: IGouOrderRequest, token: string) => async (dispatch: AppDispatch) => {
+export const postGouPaymentOrder = (formData: IOrderDetailResult, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.post('/gou-web-checkout/auth', formData, {
             headers: {
@@ -17,9 +17,7 @@ export const postGouPaymentOrder = (formData: IGouOrderRequest, token: string) =
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorOrder(error.response?.data.message));
-        } else {
-            dispatch(setErrorOrder(error.message));
-        }
+        } else dispatch(setErrorOrder(error.message));
     }
 };
 
@@ -36,9 +34,7 @@ export const getConsultTransactionId = (transactionId: string, token: string) =>
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorOrder(error.response?.data.message));
-        } else {
-            dispatch(setErrorOrder(error.message));
-        }
+        } else dispatch(setErrorOrder(error.message));
     }
 };
 
@@ -55,9 +51,7 @@ export const getOrdersHistory = (token: string) => async (dispatch: AppDispatch)
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorOrder(error.response?.data.message));
-        } else {
-            dispatch(setErrorOrder(error.message));
-        }
+        } else dispatch(setErrorOrder(error.message));
     }
 };
 
@@ -74,9 +68,7 @@ export const getConsultTransactionsPending = (token: string) => async (dispatch:
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorOrder([error.response?.data.message]));
-        } else {
-            dispatch(setErrorOrder([error.message]));
-        }
+        } else dispatch(setErrorOrder([error.message]));
     }
 };
 
@@ -94,8 +86,39 @@ export const getPaymentsPendingStatus = (token: string) => async (dispatch: AppD
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorOrder([error.response?.data.message]));
-        } else {
-            dispatch(setErrorOrder([error.message]));
-        }
+        } else dispatch(setErrorOrder([error.message]));
+    }
+};
+
+export const getAllActiveGetawayPaymentTransactions = (token: string) => async (dispatch: AppDispatch) => {
+    try {
+        const response = await axiosInstance.get(`/top-drive/orders-clients`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            }
+        });
+        dispatch(getAllActiveGetawayPaymentTransactionsStart(response.data.result));
+    } catch (error: any) {
+        if (error.response && error.response.status === 500) {
+            dispatch(setErrorOrder(error.response?.data.message));
+        } else dispatch(setErrorOrder(error.message));
+    }
+};
+
+export const patchChangeStateConfirmation = (idOrder: string, formData: Partial<IOrderDetail>, token: string) => async (dispatch: AppDispatch) => {
+    try {
+        dispatch(patchChangeStateConfirmationStart());
+        const response = await axiosInstance.patch(`/top-drive/orders-clients/${idOrder}`, formData, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            }
+        });
+        dispatch(setOrderData(response.data));
+    } catch (error: any) {
+        if (error.response && error.response.status === 500) {
+            dispatch(setErrorOrder(error.response?.data));
+        } else dispatch(setErrorOrder(error));
     }
 };

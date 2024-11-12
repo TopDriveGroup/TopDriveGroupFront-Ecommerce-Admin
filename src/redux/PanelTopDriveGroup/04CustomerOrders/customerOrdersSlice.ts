@@ -1,17 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IGouOrderResult } from '../../../types/gouOrder.types';
+import { IOrderDetailResult, IOrderDetail } from '../../../types/orderDetail.types';
 
 interface CustomerOrdersState {
-    customerOrders: IGouOrderResult | null;
-    customerOrdersPending: IGouOrderResult[] | null;
-    paymentsPending: IGouOrderResult[] | null;
+    customerOrders: IOrderDetailResult | null;
+    ordersDetail: IOrderDetail | IOrderDetail[] | null;
+    customerOrdersPending: IOrderDetailResult[] | null;
+    paymentsPending: IOrderDetailResult[] | null;
     loading: boolean;
     errorCustomerOrders: string[] | null;
 }
 
 const initialState: CustomerOrdersState = {
     customerOrders: null,
+    ordersDetail: null,
     customerOrdersPending: null,
     paymentsPending: null,
     loading: false,
@@ -29,12 +31,12 @@ const orderSlice = createSlice({
             state.loading = false;
             state.errorCustomerOrders= action.payload;
         },
-        postGouPaymentOrderStart: (state, action: PayloadAction<IGouOrderResult>) => {
+        postGouPaymentOrderStart: (state, action: PayloadAction<IOrderDetailResult>) => {
             state.loading = true;
             state.customerOrders = action.payload;
             state.errorCustomerOrders = null;
         },
-        postStatusConsultSessionServiceStart: (state, action: PayloadAction<IGouOrderResult>) => {
+        postStatusConsultSessionServiceStart: (state, action: PayloadAction<IOrderDetailResult>) => {
             state.loading = true;
             state.customerOrders = action.payload;
             state.errorCustomerOrders = null;
@@ -54,12 +56,23 @@ const orderSlice = createSlice({
         setPaymentsPendingStatusStart(state) {
             state.loading = true;
         },
-        getPaymentsPendingStatusStart: (state, action: PayloadAction<IGouOrderResult[]>) => {
+        getPaymentsPendingStatusStart: (state, action: PayloadAction<IOrderDetailResult[]>) => {
             state.loading = false;
             state.paymentsPending = action.payload;
+        },
+
+        // OBTENER TODAS LAS ORDENES ACTIVAS DEL CLIENTE EN ESTADO 'En preparación' Y 'En camino'
+        getAllActiveGetawayPaymentTransactionsStart: (state, action: PayloadAction<IOrderDetail>) => {
+            state.loading = false;
+            state.ordersDetail = action.payload;
+        },
+        // CAMBIAR DE ESTADO UNA ORDEN DEL CLIENTE
+        patchChangeStateConfirmationStart: (state) => {
+            state.loading = true;
+            state.ordersDetail = null;
         },
     },
 });
 
-export const { setOrderData, setErrorOrder, postGouPaymentOrderStart, postStatusConsultSessionServiceStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart, setPaymentsPendingStatusStart, getPaymentsPendingStatusStart } = orderSlice.actions;
+export const { setOrderData, setErrorOrder, postGouPaymentOrderStart, postStatusConsultSessionServiceStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart, setPaymentsPendingStatusStart, getPaymentsPendingStatusStart, getAllActiveGetawayPaymentTransactionsStart, patchChangeStateConfirmationStart } = orderSlice.actions;
 export default orderSlice.reducer;
