@@ -27,6 +27,7 @@ const productSlice = createSlice({
     reducers: {
         setProductData: (state) => {
             state.loading = false;
+            state.errorProduct = null;
         },
         setErrorProduct: (state, action: PayloadAction<string[]>) => {
             state.loading = false;
@@ -49,10 +50,14 @@ const productSlice = createSlice({
             state.searchCompleted = true;
         },
         //OBTENER TODOS LOS PRODUCTOS
-        getAllProductStart: (state, action: PayloadAction<IProduct | IProduct[]>) => {
+        getAllProductStart: (state, action: PayloadAction<{ products: IProduct[], totalProducts: number, totalPages: number, currentPage: number }>) => {
             state.loading = false;
-            state.products = action.payload;
+            state.products = action.payload.products;
+            state.totalProducts = action.payload.totalProducts;
+            state.totalPages = action.payload.totalPages;
+            state.currentPage = action.payload.currentPage;
             state.errorProduct = null;
+            state.searchCompleted = true;
         },
         //OBTENER UN PRODUCTO POR ID
         getProductByIdStart: (state, action: PayloadAction<IProduct>) => {
