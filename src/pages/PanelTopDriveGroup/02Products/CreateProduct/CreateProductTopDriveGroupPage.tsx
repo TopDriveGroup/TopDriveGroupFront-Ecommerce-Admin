@@ -19,19 +19,19 @@ import SelectProductUnitMeasure from '../../../../helpers/CreateProducts/SelectP
 import SelectProductsCategories from '../../../../helpers/CreateProducts/SelectProductsCategories/SelectProductsCategories';
 import SelectProductsTypes from '../../../../helpers/CreateProducts/SelectProductsTypes/SelectProductsTypes';
 import SelectProductManufacturers from '../../../../helpers/CreateProducts/selectProductManufacturers/selectProductManufacturers';
-import { PiCaretUp, PiCaretDown } from "react-icons/pi";
 import styles from './styles.module.css';
 
 function CreateProductTopDriveGroupPage() {
     const token = jsCookie.get('token') || '';
-    const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
+
+    // REDUX
+    const dispatch: AppDispatch = useDispatch();
+    const errorProduct = useSelector((state: RootState) => state.products.errorProduct);
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IProduct>();
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [shouldNavigate, setShouldNavigate] = useState(false);
-    
-    const errorProduct = useSelector((state: RootState) => state.products.errorProduct);
     
     //SELECT DE LA CLASE DEL PRODUCTO
     const [selectedClass, setSelectedClass] = useState('');
@@ -148,42 +148,6 @@ function CreateProductTopDriveGroupPage() {
         }
     };
 
-    // Expansión de los inputs de Características Eléctricas
-    const [electricalCharacteristics, setShowElectricalCharacteristics] = useState(false);
-    function handleShowElectricalCharacteristics() {
-        setShowElectricalCharacteristics(true);
-    }
-    function handleHideElectricalCharacteristics() {
-        setShowElectricalCharacteristics(false);
-    }
-
-    // Expansión de los inputs de Características Ambientales
-    const [environmentalCharacteristics, setShowEnvironmentalCharacteristics] = useState(false);
-    function handleShowEnvironmentalCharacteristics() {
-        setShowEnvironmentalCharacteristics(true);
-    }
-    function handleHideEnvironmentalCharacteristics() {
-        setShowEnvironmentalCharacteristics(false);
-    }
-
-    // Expansión de los inputs de Características Estándares
-    const [standardsCharacteristics, setShowStandardsCharacteristics] = useState(false);
-    function handleShowStandardsCharacteristics() {
-        setShowStandardsCharacteristics(true);
-    }
-    function handleHideStandardsCharacteristics() {
-        setShowStandardsCharacteristics(false);
-    }
-
-    // Expansión de los inputs de Características de Documentación
-    const [documentationCharacteristics, setShowDocumentationCharacteristics] = useState(false);
-    function handleShowDocumentationCharacteristics() {
-        setShowDocumentationCharacteristics(true);
-    }
-    function handleHideDocumentationCharacteristics() {
-        setShowDocumentationCharacteristics(false);
-    }
-
     //CREA EL PRODUCTO
     const onSubmit = async (values: IProduct) => {
         try {
@@ -255,11 +219,11 @@ function CreateProductTopDriveGroupPage() {
                                 <div className={styles.container__Input}>
                                     <input
                                         type="text"
-                                        {...register('sap', { required: true })}
+                                        {...register('itemCode', { required: true })}
                                         className={`${styles.input} p-2 mb-4 border rounded`}
                                         placeholder='Código SAP'
                                     />
-                                    {errors.sap && (
+                                    {errors.itemCode && (
                                         <p className={`${styles.text__Danger} text-danger position-absolute`}>El código SAP es requerido</p>
                                     )}
                                 </div>
@@ -287,71 +251,15 @@ function CreateProductTopDriveGroupPage() {
                                 />
                             </div>
 
-                            <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                <SelectProductManufacturers
-                                    onSelect={handleSelectManufacturers}
-                                    reset={resetManufacturer}
-                                />
-                            </div>
+                            <SelectProductManufacturers
+                                onSelect={handleSelectManufacturers}
+                                reset={resetManufacturer}
+                            />
 
-                            <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                    <h6 className={styles.label}>Inventario</h6>
-                                    <div className={styles.container__Input}> 
-                                        <input
-                                            type="number"
-                                            {...register('inventory', { required: true, setValueAs: (value) => parseFloat(value) })}
-                                            className={`${styles.input} p-2 mb-4 border rounded`}
-                                            placeholder='Inventario'
-                                            min={0}
-                                            onKeyDown={(e) => {
-                                                if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                    e.preventDefault();
-                                                }
-                                            }}
-                                        />
-                                        {errors.inventory && (
-                                            <p className={`${styles.text__Danger} text-danger position-absolute`}>El inventario es requerido</p>
-                                        )}
-                                    </div>
-                                </div>
-                                <SelectProductUnitMeasure
-                                    onSelect={handleSelectUnitMeasure}
-                                    reset={resetUnitMeasure}
-                                />
-                            </div>
-
-                            <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                    <h6 className={styles.label}>Familia</h6>
-                                    <div className={styles.container__Input}>
-                                        <input
-                                            type="text"
-                                            {...register('family', { required: true })}
-                                            className={`${styles.input} p-2 mb-4 border rounded`}
-                                            placeholder='Familia del producto'
-                                        />
-                                        {errors.family && (
-                                            <p className={`${styles.text__Danger} text-danger position-absolute`}>La familia del producto es requerida</p>
-                                        )}
-                                    </div>
-                                </div>
-
-                                <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                    <h6 className={styles.label}>Serie</h6>
-                                    <div className={styles.container__Input}> 
-                                        <input
-                                            type="text"
-                                            {...register('series', { required: true })}
-                                            className={`${styles.input} p-2 mb-4 border rounded`}
-                                            placeholder='Serie del producto'
-                                        />
-                                        {errors.series && (
-                                            <p className={`${styles.text__Danger} text-danger position-absolute`}>La serie del producto es requerida</p>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
+                            <SelectProductUnitMeasure
+                                onSelect={handleSelectUnitMeasure}
+                                reset={resetUnitMeasure}
+                            />
 
                             <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
                                 <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
@@ -359,11 +267,11 @@ function CreateProductTopDriveGroupPage() {
                                     <div className={styles.container__Input}>
                                         <input
                                             type="text"
-                                            {...register('reference', { required: true })}
+                                            {...register('supplierCatalogNo', { required: true })}
                                             className={`${styles.input} p-2 mb-4 border rounded`}
                                             placeholder='Referencia del producto'
                                         />
-                                        {errors.reference && (
+                                        {errors.supplierCatalogNo && (
                                             <p className={`${styles.text__Danger} text-danger position-absolute`}>La referencia del producto es requerida</p>
                                         )}
                                     </div>
@@ -373,11 +281,11 @@ function CreateProductTopDriveGroupPage() {
                                     <div className={styles.container__Input}>
                                         <input
                                             type="text"
-                                            {...register('active', { required: true })}
+                                            {...register('valid', { required: true })}
                                             className={`${styles.input} p-2 mb-4 border rounded`}
                                             placeholder='Activo'
                                         />
-                                        {errors.active && (
+                                        {errors.valid && (
                                             <p className={`${styles.text__Danger} text-danger position-absolute`}>Este dato es requerido</p>
                                         )}
                                     </div>
@@ -389,11 +297,11 @@ function CreateProductTopDriveGroupPage() {
                                 <div className={styles.container__Input}>
                                     <input
                                         type="text"
-                                        {...register('description', { required: true })}
+                                        {...register('itemName', { required: true })}
                                         className={`${styles.input} p-2 mb-4 border rounded`}
                                         placeholder='Descripción del producto'
                                     />
-                                    {errors.description && (
+                                    {errors.itemName && (
                                         <p className={`${styles.text__Danger} text-danger position-absolute`}>La descripción del producto es requerida</p>
                                     )}
                                 </div>
@@ -404,33 +312,12 @@ function CreateProductTopDriveGroupPage() {
                                 <div className={styles.container__Input}>
                                     <input
                                         type="text"
-                                        {...register('descriptionManufacturer', { required: true })}
+                                        {...register('manufacturerDescription', { required: true })}
                                         className={`${styles.input} p-2 mb-4 border rounded`}
                                         placeholder='Descripción del fabricante'
                                     />
-                                    {errors.descriptionManufacturer && (
+                                    {errors.manufacturerDescription && (
                                         <p className={`${styles.text__Danger} text-danger position-absolute`}>La descripción del fabricante es requerida</p>
-                                    )}
-                                </div>
-                            </div>
-
-                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                <h6 className={styles.label}>Largo</h6>
-                                <div className={styles.container__Input}>
-                                    <input
-                                        type="number"
-                                        {...register('long', { required: true, setValueAs: (value) => parseFloat(value) })}
-                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                        placeholder='Largo del producto'
-                                        min={0}
-                                        onKeyDown={(e) => {
-                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                e.preventDefault();
-                                            }
-                                        }}
-                                    />
-                                    {errors.long && (
-                                        <p className={`${styles.text__Danger} text-danger position-absolute`}>El largo del producto es requerido</p>
                                     )}
                                 </div>
                             </div>
@@ -474,429 +361,6 @@ function CreateProductTopDriveGroupPage() {
                                         )}
                                     </div>
                                 </div>
-                            </div>
-
-                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                <h6 className={styles.label}>Precio de venta a Distribuidor</h6>
-                                <div className={styles.container__Input}> 
-                                    <input
-                                        type="number"
-                                        {...register('sellingPriceDistributor', { required: true, setValueAs: (value) => parseFloat(value) })}
-                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                        placeholder='Precio de venta'
-                                        min={0}
-                                        onKeyDown={(e) => {
-                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                e.preventDefault();
-                                            }
-                                        }}
-                                    />
-                                    {errors.sellingPriceDistributor && (
-                                        <p className={`${styles.text__Danger} text-danger position-absolute`}>El precio de venta es requerido</p>
-                                    )}
-                                </div>
-                            </div>
-
-                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                <h6 className={styles.label}>Precio de venta a Integrador</h6>
-                                <div className={styles.container__Input}> 
-                                    <input
-                                        type="number"
-                                        {...register('sellingPriceIntegrators', { required: true, setValueAs: (value) => parseFloat(value) })}
-                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                        placeholder='Precio de venta'
-                                        min={0}
-                                        onKeyDown={(e) => {
-                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                e.preventDefault();
-                                            }
-                                        }}
-                                    />
-                                    {errors.sellingPriceIntegrators && (
-                                        <p className={`${styles.text__Danger} text-danger position-absolute`}>El precio de venta es requerido</p>
-                                    )}
-                                </div>
-                            </div>
-
-                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                <h6 className={styles.label}>Precio de venta a Usuario final</h6>
-                                <div className={styles.container__Input}> 
-                                    <input
-                                        type="number"
-                                        {...register('sellingPriceFinalUser', { required: true, setValueAs: (value) => parseFloat(value) })}
-                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                        placeholder='Precio de venta'
-                                        min={0}
-                                        onKeyDown={(e) => {
-                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                e.preventDefault();
-                                            }
-                                        }}
-                                    />
-                                    {errors.sellingPriceFinalUser && (
-                                        <p className={`${styles.text__Danger} text-danger position-absolute`}>El precio de venta es requerido</p>
-                                    )}
-                                </div>
-                            </div>
-
-
-                            {/* CARACTERISTICAS ELECTRICAS */}
-                            <div className={`${styles.container__Aditional_Properties} mb-4`}>
-                                <div className={`${styles.aditional__Properties} pt-1 pb-1 px-0 d-flex align-items-center justify-content-between`}>
-                                    <h6 className={styles.title__Aditional_Properties}>Características eléctricas</h6>
-                                    {electricalCharacteristics === false && (
-                                        <PiCaretDown className={`${styles.icon__Show} `} onClick={handleShowElectricalCharacteristics} />
-                                    )}
-                                    {electricalCharacteristics === true && (
-                                        <PiCaretUp className={`${styles.icon__Show} `} onClick={handleHideElectricalCharacteristics} />
-                                    )}
-                                </div>
-
-                                {electricalCharacteristics && (
-                                    <div className="pt-2">
-                                        <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Tipo de tensión</h6>
-                                                <div className={styles.container__Input}>
-                                                    <input
-                                                        type="text"
-                                                        {...register('tensionType')}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Tipo de tensión del producto'
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Frecuencia</h6>
-                                                <div className={styles.container__Input}> 
-                                                    <input
-                                                        type="number"
-                                                        {...register('frequency', { setValueAs: (value) => parseFloat(value) })}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Frecuencia'
-                                                        min={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                e.preventDefault();
-                                                            }
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Mínimo de tensión</h6>
-                                                <div className={styles.container__Input}> 
-                                                    <input
-                                                        type="number"
-                                                        {...register('minimumTension', { setValueAs: (value) => parseFloat(value) })}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Mínimo de tensión'
-                                                        min={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                e.preventDefault();
-                                                            }
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Máximo de tensión</h6>
-                                                <div className={styles.container__Input}> 
-                                                    <input
-                                                        type="number"
-                                                        {...register('maximumTension', { setValueAs: (value) => parseFloat(value) })}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Máximo de tensión'
-                                                        min={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                e.preventDefault();
-                                                            }
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Corriente de entradad</h6>
-                                                <div className={styles.container__Input}> 
-                                                    <input
-                                                        type="number"
-                                                        {...register('inputCurrent', { setValueAs: (value) => parseFloat(value) })}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Corriente de entradad'
-                                                        min={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                e.preventDefault();
-                                                            }
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Corriente de salida</h6>
-                                                <div className={styles.container__Input}> 
-                                                    <input
-                                                        type="number"
-                                                        {...register('outputCurrent', { setValueAs: (value) => parseFloat(value) })}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Corriente de salida'
-                                                        min={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                e.preventDefault();
-                                                            }
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Potencia</h6>
-                                                <div className={styles.container__Input}> 
-                                                    <input
-                                                        type="number"
-                                                        {...register('power', { setValueAs: (value) => parseFloat(value) })}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Corriente de entradad'
-                                                        min={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                e.preventDefault();
-                                                            }
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Voltaje de potencia</h6>
-                                                <div className={styles.container__Input}> 
-                                                    <input
-                                                        type="number"
-                                                        {...register('powerVoltage', { setValueAs: (value) => parseFloat(value) })}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Corriente de salida'
-                                                        min={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                e.preventDefault();
-                                                            }
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Caballaje</h6>
-                                                <div className={styles.container__Input}> 
-                                                    <input
-                                                        type="number"
-                                                        {...register('horsepower', { setValueAs: (value) => parseFloat(value) })}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Corriente de entradad'
-                                                        min={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                e.preventDefault();
-                                                            }
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Voltaje de caballaje</h6>
-                                                <div className={styles.container__Input}> 
-                                                    <input
-                                                        type="number"
-                                                        {...register('horsepowerVoltage', { setValueAs: (value) => parseFloat(value) })}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Corriente de salida'
-                                                        min={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                e.preventDefault();
-                                                            }
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-
-
-                            {/* CARACTERISTICAS AMBIENTALES */}
-                            <div className={`${styles.container__Aditional_Properties} mb-4`}>
-                                <div className={`${styles.aditional__Properties} pt-1 pb-1 px-0 d-flex align-items-center justify-content-between`}>
-                                    <h6 className={styles.title__Aditional_Properties}>Características ambientales</h6>
-                                    {environmentalCharacteristics === false && (
-                                        <PiCaretDown className={`${styles.icon__Show} `} onClick={handleShowEnvironmentalCharacteristics} />
-                                    )}
-                                    {environmentalCharacteristics === true && (
-                                        <PiCaretUp className={`${styles.icon__Show} `} onClick={handleHideEnvironmentalCharacteristics} />
-                                    )}
-                                </div>
-
-                                {environmentalCharacteristics && (
-                                    <div className="pt-2">
-                                        <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Eficiencia</h6>
-                                                <div className={styles.container__Input}>
-                                                    <input
-                                                        type="text"
-                                                        {...register('efficiency')}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Tipo de tensión del producto'
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Ip</h6>
-                                                <div className={styles.container__Input}>
-                                                    <input
-                                                        type="text"
-                                                        {...register('ip')}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Tipo de tensión del producto'
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-
-
-                            {/* CARACTERISTICAS ESTANDARES */}
-                            <div className={`${styles.container__Aditional_Properties} mb-4`}>
-                                <div className={`${styles.aditional__Properties} pt-1 pb-1 px-0 d-flex align-items-center justify-content-between`}>
-                                    <h6 className={styles.title__Aditional_Properties}>Características estándares</h6>
-                                    {standardsCharacteristics === false && (
-                                        <PiCaretDown className={`${styles.icon__Show} `} onClick={handleShowStandardsCharacteristics} />
-                                    )}
-                                    {standardsCharacteristics === true && (
-                                        <PiCaretUp className={`${styles.icon__Show} `} onClick={handleHideStandardsCharacteristics} />
-                                    )}
-                                </div>
-
-                                {standardsCharacteristics && (
-                                    <div className="pt-2">
-                                        <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Estándar</h6>
-                                                <div className={styles.container__Input}>
-                                                    <input
-                                                        type="text"
-                                                        {...register('standard')}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Tipo de tensión del producto'
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Protocolo</h6>
-                                                <div className={styles.container__Input}>
-                                                    <input
-                                                        type="text"
-                                                        {...register('protocol')}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Tipo de tensión del producto'
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-
-
-                            {/* CARACTERISTICAS DOCUMENTACION */}
-                            <div className={`${styles.container__Aditional_Properties} mb-4`}>
-                                <div className={`${styles.aditional__Properties} pt-1 pb-1 px-0 d-flex align-items-center justify-content-between`}>
-                                    <h6 className={styles.title__Aditional_Properties}>Características de documentación</h6>
-                                    {documentationCharacteristics === false && (
-                                        <PiCaretDown className={`${styles.icon__Show} `} onClick={handleShowDocumentationCharacteristics} />
-                                    )}
-                                    {documentationCharacteristics === true && (
-                                        <PiCaretUp className={`${styles.icon__Show} `} onClick={handleHideDocumentationCharacteristics} />
-                                    )}
-                                </div>
-
-                                {documentationCharacteristics && (
-                                    <div className="pt-2">
-                                        <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Aplicaciones</h6>
-                                                <div className={styles.container__Input}>
-                                                    <input
-                                                        type="text"
-                                                        {...register('applications')}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Tipo de tensión del producto'
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Página</h6>
-                                                <div className={styles.container__Input}>
-                                                    <input
-                                                        type="text"
-                                                        {...register('page')}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Tipo de tensión del producto'
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className={`${styles.container__Inputs} d-flex align-items-center justify-content-center gap-3`}>
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Web</h6>
-                                                <div className={styles.container__Input}>
-                                                    <input
-                                                        type="text"
-                                                        {...register('web')}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Tipo de tensión del producto'
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
-                                                <h6 className={styles.label}>Link de ficha técnica del fabricante</h6>
-                                                <div className={styles.container__Input}>
-                                                    <input
-                                                        type="text"
-                                                        {...register('datasheet')}
-                                                        className={`${styles.input} p-2 mb-4 border rounded`}
-                                                        placeholder='Tipo de tensión del producto'
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
                             </div>
 
                             <div

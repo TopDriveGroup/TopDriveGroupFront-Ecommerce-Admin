@@ -70,6 +70,12 @@ const productSlice = createSlice({
             state.loading = true;
             state.errorProduct = null;
         },
+        //ACTUALIZAR MASIVAMENTE LAS IMAGENES DE LOS ITEMS
+        putManyProductsStart: (state, action: PayloadAction<IProduct[]>) => {
+            state.loading = true;
+            state.products = action.payload;
+            state.errorProduct = null;
+        },
         //ELIMINAR PERMANENTEMENTE UN PRODUCTO
         deleteProductStart: (state) => {
             state.loading = true;
@@ -101,5 +107,5 @@ const productSlice = createSlice({
     },
 });
 
-export const { setProductData, setErrorProduct, postProductStart, getProductsStart, getAllProductStart, getProductByIdStart, putProductStart, deleteProductStart, patchLogicalDeleteProductStart, patchActivateLogicalDeleteProductStart, getProductsLogicalStart, postManyProductsStart } = productSlice.actions;
+export const { setProductData, setErrorProduct, postProductStart, getProductsStart, getAllProductStart, getProductByIdStart, putProductStart, putManyProductsStart, deleteProductStart, patchLogicalDeleteProductStart, patchActivateLogicalDeleteProductStart, getProductsLogicalStart, postManyProductsStart } = productSlice.actions;
 export default productSlice.reducer;

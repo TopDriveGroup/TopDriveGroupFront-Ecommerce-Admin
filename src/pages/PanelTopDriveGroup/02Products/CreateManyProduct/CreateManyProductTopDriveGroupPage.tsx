@@ -10,8 +10,8 @@ import type { AppDispatch } from '../../../../redux/store';
 //ELEMENTOS DEL COMPONENTE
 import { IProduct } from '../../../../types/product.types';
 import NavBar from '../../../../components/PanelTopDriveGroup/01NavBar/NavBar';
-import Footer from '../../../../components/PanelTopDriveGroup/Footer/Footer';
 import SideBar from '../../../../components/PanelTopDriveGroup/SideBar/SideBar';
+import Footer from '../../../../components/PanelTopDriveGroup/Footer/Footer';
 import styles from './styles.module.css';
 
 function CreateManyProductTopDriveGroupPage() {
@@ -126,7 +126,6 @@ function CreateManyProductTopDriveGroupPage() {
     const onSubmit = async () => {
         if (excelData) {
             const formData = prepareFormData(excelData);
-            console.log('formData: ', formData)
             await dispatch(postManyProducts(formData, token));
             setMessage('Los productos se han creado correctamente.');
             // setShouldNavigate(true);
@@ -141,7 +140,7 @@ function CreateManyProductTopDriveGroupPage() {
             <div className={`${styles.container} d-flex`}>
                 <SideBar />
                 <div className={`${styles.container__Component} p-4`}>
-                    <h2 className={`${styles.main__Title} mb-3 text-start}`}>Crear productos masivamente ss</h2>
+                    <h2 className={`${styles.main__Title} mb-3 text-start}`}>Crear productos masivamente</h2>
 
                     <div className={`${styles.container__Product} m-auto d-flex flex-column align-items-center justify-content-between gap-4`}>
                         <div className={`${styles.containerDownloadFile} mt-3 mb-3 p-2 d-flex align-items-center justify-content-between border rounded`}>

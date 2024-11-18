@@ -134,6 +134,12 @@ function SideBar() {
                             Crear productos
                         </Link>
                         <Link
+                            to='/panel-top-drive-group/products/massive-image-updates'
+                            className={`${styles.link__Sub_Menu} ${location.pathname === '/panel-top-drive-group/products/massive-image-updates' ? styles.active__Sub_Menu : ''} text-decoration-none`}
+                        >
+                            Actualización masiva de imagenes
+                        </Link>
+                        <Link
                             to='/panel-top-drive-group/products/create-many-products'
                             className={`${styles.link__Sub_Menu} ${location.pathname === '/panel-top-drive-group/products/create-many-products' ? styles.active__Sub_Menu : ''} text-decoration-none`}
                         >
