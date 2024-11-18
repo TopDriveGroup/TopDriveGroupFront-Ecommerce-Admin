@@ -18,6 +18,7 @@ import ConfigurationTopDriveGroupPage from './pages/PanelTopDriveGroup/01Configu
 import ProductsTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/ProductsTopDriveGroupPage';
 import ProductsSapTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/ProductsSapTopDriveGroup/ProductsSapTopDriveGroupPage';
 import CreateProductTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/CreateProduct/CreateProductTopDriveGroupPage';
+import MassiveImageUpdatesPage from './pages/PanelTopDriveGroup/02Products/MassiveImageUpdates/MassiveImageUpdatesPage';
 import CreateManyProductTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/CreateManyProduct/CreateManyProductTopDriveGroupPage';
 import EditProductTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/EditProduct/EditProductTopDriveGroupPage';
 import ActiveCustomerQuotationsPage from './pages/PanelTopDriveGroup/03CustomerQuotes/01ActiveCustomerQuotations/ActiveCustomerQuotationsPage';
@@ -66,6 +67,7 @@ function App() {
                         <Route path='/panel-top-drive-group/products/consult' element={<ProductsTopDriveGroupPage />} />
                         <Route path='/panel-top-drive-group/products/consult-sap' element={<ProductsSapTopDriveGroupPage />} />
                         <Route path='/panel-top-drive-group/products/create-product' element={<CreateProductTopDriveGroupPage />} />
+                        <Route path='/panel-top-drive-group/products/massive-image-updates' element={<MassiveImageUpdatesPage />} />
                         <Route path='/panel-top-drive-group/products/create-many-products' element={<CreateManyProductTopDriveGroupPage />} />
                         <Route path='/panel-top-drive-group/products/edit-product/:idProduct' element={<EditProductTopDriveGroupPage />} />
                         {/* ----------SIDEBAR TOP DRIVE - QUOTES---------- */}
