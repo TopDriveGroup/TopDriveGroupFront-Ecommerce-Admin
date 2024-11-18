@@ -2,7 +2,7 @@
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
 import { IProduct } from '../../../types/product.types';
-import { setProductData, setErrorProduct, postProductStart, postManyProductsStart, getProductsStart, getAllProductStart, getProductByIdStart, putProductStart, deleteProductStart, patchLogicalDeleteProductStart, patchActivateLogicalDeleteProductStart, getProductsLogicalStart,  } from './productSlice';
+import { setProductData, setErrorProduct, postProductStart, postManyProductsStart, getProductsStart, getAllProductStart, getProductByIdStart, putProductStart, putManyProductsStart, deleteProductStart, patchLogicalDeleteProductStart, patchActivateLogicalDeleteProductStart, getProductsLogicalStart,  } from './productSlice';
 
 //CREAR UN PRODUCTO
 export const postProduct = (formData: IProduct, token: string) => async (dispatch: AppDispatch) => {
@@ -18,9 +18,7 @@ export const postProduct = (formData: IProduct, token: string) => async (dispatc
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        } else dispatch(setErrorProduct(error.message));
     }
 };
 
@@ -38,9 +36,7 @@ export const postManyProducts = (formData: IProduct[], token: string) => async (
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        } else dispatch(setErrorProduct(error.message));
     }
 };
 
@@ -67,9 +63,7 @@ export const getProducts = (token: string, page: number = 1, limit?: number) => 
     } catch (error: any) {
         if (error.response && error.response.status === 401) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        } else dispatch(setErrorProduct(error.message));
     }
 };
 
@@ -92,9 +86,7 @@ export const getAllProduct = (page: number = 1, limit: number = 100) => async (d
     } catch (error: any) {
         if (error.response && error.response.status === 401) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        } else dispatch(setErrorProduct(error.message));
     }
 };
 
@@ -111,9 +103,7 @@ export const getProductById = (idProducts: string, token: string) => async (disp
     } catch (error: any) {
         if (error.response && error.response.status === 401) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        } else dispatch(setErrorProduct(error.message));
     }
 };
 
@@ -131,9 +121,25 @@ export const putProduct = (idProducts: string, formData: IProduct, token: string
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        } else dispatch(setErrorProduct(error.message));
+    }
+};
+
+//ACTUALIZAR MASIVAMENTE LAS IMAGENES DE LOS ITEMS
+export const putManyProducts = (formData: any[], token: string) => async (dispatch: AppDispatch) => {
+    try {
+        dispatch(putManyProductsStart(formData));
+        const response = await axiosInstance.put('/top-drive/product/update-many', formData, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            }
+        });
+        dispatch(setProductData(response.data));
+    } catch (error: any) {
+        if (error.response && error.response.status === 500) {
+            dispatch(setErrorProduct(error.response?.data.message));
+        } else dispatch(setErrorProduct(error.message));
     }
 };
 
@@ -151,9 +157,7 @@ export const deleteProduct = (idProducts: string, token: string) => async (dispa
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        } else dispatch(setErrorProduct(error.message));
     }
 };
 
@@ -171,7 +175,7 @@ export const patchLogicalDeleteProduct = (idProducts: string, formData: IProduct
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
+        } else dispatch(setErrorProduct(error.message));{
             dispatch(setErrorProduct(error.message));
         }
     }
@@ -191,9 +195,7 @@ export const patchActivateLogicalDeleteProduct = (idProducts: string, formData: 
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        } else dispatch(setErrorProduct(error.message));
     }
 }
 
@@ -210,10 +212,6 @@ export const getProductsLogical = (token: string) => async (dispatch: AppDispatc
     } catch (error: any) {
         if (error.response && error.response.status === 401) {
             dispatch(setErrorProduct(error.response?.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        } else dispatch(setErrorProduct(error.message));
     }
 };
-
-//ACTUALIZAR MASIVAMENTE PRODUCTOS
