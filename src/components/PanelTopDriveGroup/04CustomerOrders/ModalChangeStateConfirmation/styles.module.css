@@ -19,6 +19,15 @@
 .text__Danger {
     top: 60px;
 }
+.input__File {
+    width: 100%;
+}
+.input__File:hover {
+    cursor: pointer;
+}
+.input__File:focus{
+    outline-color: #e4002b;
+}
 .textarea {
     max-height: 200px;
     width: 100%;
