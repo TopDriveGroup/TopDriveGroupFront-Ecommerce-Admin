@@ -49,6 +49,7 @@
 .container__Table {
     border: 1px solid rgba(0, 0, 0, 0.2);
     overflow-x: auto;
+    font-size: 14px;
 }
 .container__Head {
     height: 60px;
@@ -66,49 +67,55 @@
 .date__Order {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    min-width: 130px;
+    min-width: 140px;
     width: 13%;
 }
-.reference {
+.delivery__Note_Number {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    min-width: 300px;
-    width: 26%;
+    min-width: 100px;
+    width: 9.5%;
+}
+.id__Gou {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 100px;
+    width: 9.5%;
 }
 .client {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    min-width: 150px;
-    width: 14%;
+    min-width: 200px;
+    width: 19%;
 }
 .id__Client {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    min-width: 100px;
-    width: 10%;
+    min-width: 120px;
+    width: 11.5%;
 }
 .status {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    min-width: 100px;
-    width: 10%;
+    min-width: 80px;
+    width: 8.5%;
 }
 .state {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    min-width: 90px;
-    width: 9%;
+    min-width: 100px;
+    width: 10%;
 }
 .total {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    min-width: 100px;
-    width: 10%;
+    min-width: 120px;
+    width: 11.5%;
 }
 .actions {
     height: 60px;
     min-width: 80px;
-    width: 8%;
+    width: 7.5%;
 }
 /* CONTENIDO DE LA TABLA */
 .container__Body {
