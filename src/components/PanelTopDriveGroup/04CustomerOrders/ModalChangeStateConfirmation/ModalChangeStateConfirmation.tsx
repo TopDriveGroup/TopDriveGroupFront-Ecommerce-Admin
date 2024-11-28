@@ -25,7 +25,7 @@ function ModalChangeStateConfirmation({idOrder, onCloseModal}: ModalChangeStateC
     const [ loading, setLoading ] = useState(false);
     const [ formSubmitted, setFormSubmitted ] = useState(false);
 
-    const [newState, setNewState] = useState('En camino');
+    const [newState, setNewState] = useState('Enviado');
     const handleNewState = (event: { target: { value: SetStateAction<string>; }; }) => {
         setNewState(event.target.value);
     };
@@ -67,7 +67,7 @@ function ModalChangeStateConfirmation({idOrder, onCloseModal}: ModalChangeStateC
                         {...register('state', { required: true})}
                         onChange={handleNewState}
                     >
-                        <option value='En camino'>En camino</option>
+                        <option value='Enviado'>Enviado</option>
                         <option value='Entregado'>Entregado</option>
                     </select>
                     {errors.state && (
@@ -75,18 +75,35 @@ function ModalChangeStateConfirmation({idOrder, onCloseModal}: ModalChangeStateC
                     )}
                 </div>
 
-                <div className="mb-4 w-100 position-relative">
-                    <h6 className={styles.label}>Número de orden de la transportadora</h6>
-                    <input
-                        type="text"
-                        className={`${styles.input} p-2 border`}
-                        placeholder='Tu número de teléfono'
-                        {...register('conveyorShippingOrderNumber', { required: true })}
-                    />
-                    {errors.conveyorShippingOrderNumber && (
-                        <p className={`${styles.text__Danger} text-danger position-absolute`}>El número de ordend de envío es requerido</p>
-                    )}
-                </div>
+                {newState === 'Enviado' && (
+                    <div>
+                        <div className="mb-4 w-100 position-relative">
+                            <h6 className={styles.label}>Número de orden de la transportadora</h6>
+                            <input
+                                type="text"
+                                className={`${styles.input} p-2 border`}
+                                placeholder='Tu número de teléfono'
+                                {...register('conveyorShippingOrderNumber', { required: true })}
+                            />
+                            {errors.conveyorShippingOrderNumber && (
+                                <p className={`${styles.text__Danger} text-danger position-absolute`}>El número de orden de envío es requerido</p>
+                            )}
+                        </div>
+
+                        <div className="mb-4 w-100 position-relative">
+                            <h6 className={styles.label}>Número de nota de entrega</h6>
+                            <input
+                                type="text"
+                                className={`${styles.input} p-2 border`}
+                                placeholder='Tu número de teléfono'
+                                {...register('deliveryNoteNumber', { required: true })}
+                            />
+                            {errors.deliveryNoteNumber && (
+                                <p className={`${styles.text__Danger} text-danger position-absolute`}>El número de nota de entrega es requerido</p>
+                            )}
+                        </div>
+                    </div>
+                )}
 
                 <div className="mb-4 w-100 position-relative">
                     <h6 className={styles.label}>Comentarios de envío</h6>

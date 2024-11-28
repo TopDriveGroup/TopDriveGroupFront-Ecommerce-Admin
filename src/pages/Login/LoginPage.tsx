@@ -3,12 +3,11 @@ import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import ReCAPTCHA from 'react-google-recaptcha';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../redux/store';
 import { clearUserErrors } from '../../redux/Auth/authSlice';
-import { setRecaptchaVerified, loginUser } from '../../redux/Auth/actions';
+import { loginUser } from '../../redux/Auth/actions';
 //ELEMENTOS DEL COMPONENTE
 import { IUserLogin } from '../../types/userLogin.types';
 import LogoTopDriveGroup from '../../assets/TopDriveGroup/LogoTopDrive.svg';
@@ -29,10 +28,7 @@ function LoginPage({ addNotification }: ConsultBranchPageProps) {
     // REDUX
     const dispatch: AppDispatch = useDispatch();
     const authUserErrors = useSelector((state: RootState) => state.authUser.authUserErrors);
-    const recaptchaError = useSelector((state: RootState) => state.authUser.recaptchaError);
     const isAuthenticated = useSelector((state: RootState) => state.authUser.isAuthenticated);
-
-    const [captchaValue, setCaptchaValue] = useState<string | null>(null);
 
     useEffect(() => {
         dispatch(clearUserErrors());
@@ -49,16 +45,9 @@ function LoginPage({ addNotification }: ConsultBranchPageProps) {
     const onSubmit = async (loginData: IUserLogin) => {
         const sanitizedEmail = sanitizeInput(loginData.email);
         const sanitizedLoginData = { email: sanitizedEmail, password: loginData.password };
-        if (!captchaValue) {
-            addNotification('error', 'Por favor verifica que no eres un robot.');
-            return;
-        }
         setLoading(true);
         try {
-            const recaptchaResponse = await dispatch(setRecaptchaVerified(captchaValue));
-            if (recaptchaResponse?.success) {  
-                await dispatch(loginUser(sanitizedLoginData));
-            } else addNotification('error', 'Validación de reCAPTCHA fallida.');
+            await dispatch(loginUser(sanitizedLoginData));
         } catch (error) {
             addNotification('error', 'Error al iniciar sesión');
         } finally {
@@ -124,14 +113,6 @@ function LoginPage({ addNotification }: ConsultBranchPageProps) {
                                     )}
                                 </div>
                             </div>
-
-                            <ReCAPTCHA
-                                sitekey={import.meta.env.VITE_reCAPTCHA_SITEWEBKEY}
-                                onChange={setCaptchaValue}
-                                className={`${styles.reCAPTCHA} mb-3 d-flex align-items-center justify-content-center`}
-                            />
-
-                            {recaptchaError && <p className="error">{recaptchaError}</p>}
 
                             <div className="d-flex">
                                 {loading ? 
