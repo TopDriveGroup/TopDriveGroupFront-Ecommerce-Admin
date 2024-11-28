@@ -30,16 +30,35 @@ function ModalChangeStateConfirmation({idOrder, onCloseModal}: ModalChangeStateC
         setNewState(event.target.value);
     };
 
-    const onSubmit = async (values: IOrderDetail) => {
+    const [files, setFiles] = useState<File[]>([]);
+    const onFilesChange = (updateFunction: (prevFiles: File[]) => File[]) => {
+        setFiles(updateFunction);
+    };
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>, fieldName: string) => {
+        const selectedFiles = event.target.files;
+        if (selectedFiles) {
+            const newFiles = Array.from(selectedFiles);     // CONVERTIR LOS ARCHIVOS SELECCIONADOS A UN ARRAY
+            onFilesChange((prevFiles: File[]) => [          // LLAMAR A "onFilesChange" CON LOS ARCHIVOS PREVIOS ACTUALIZADOS
+                ...prevFiles.filter((file: File) => file.name !== fieldName),
+                ...newFiles,
+            ]);
+        }
+    };
+
+    const onSubmit = async (values: any) => {
         setLoading(true);
         try {
-            const formData = {
-                ...values,
-                state: newState,
-            } as IOrderDetail;
-            await new Promise(resolve => setTimeout(resolve, 500));
+            const formData = new FormData();
+            formData.append('state', newState);
+            formData.append('conveyorShippingOrderNumber', values.conveyorShippingOrderNumber || '');
+            formData.append('deliveryNoteNumber', values.deliveryNoteNumber || '');
+            formData.append('commentConveyorShippingOrderNumber', values.commentConveyorShippingOrderNumber || '');            
+            files.forEach((file) => {
+                formData.append('attachmentChamberCommerce', file, file.name);    // TENER PRESENTE QUE EL NOMBRE "attachments" DEBE DE SER EL MISMO QUE RECIBE EL BACK
+            });
             await dispatch(patchChangeStateConfirmation(idOrder, formData, token));
-            setFormSubmitted(true);    
+            setFormSubmitted(true);
             reset();
             setTimeout(() => {
                 dispatch(getAllActiveGetawayPaymentTransactions(token));
@@ -49,7 +68,7 @@ function ModalChangeStateConfirmation({idOrder, onCloseModal}: ModalChangeStateC
                 }, 10);
             }, 1500);
         } catch (error) {
-            throw new Error('Error al cambiar de estado la orden');
+            console.error('Error al cambiar de estado la orden:', error);
         } finally {
             setLoading(false);
         }
@@ -102,6 +121,22 @@ function ModalChangeStateConfirmation({idOrder, onCloseModal}: ModalChangeStateC
                                 <p className={`${styles.text__Danger} text-danger position-absolute`}>El número de nota de entrega es requerido</p>
                             )}
                         </div>
+                    </div>
+                )}
+
+                {newState === 'Entregado' && (
+                    <div className="w-100 position-relative">
+                        <h6 className={styles.label}><span className={`${styles.required}`}>*</span> Guía de entrega</h6>
+                        <input
+                            type="file"
+                            {...register('attachmentDeliveryGuide', { required: true })}
+                            className={`${styles.input__File} p-2 mb-4 border rounded`}
+                            accept="application/pdf"
+                            onChange={(e) => handleFileChange(e, 'guia')}
+                        />
+                        {errors.attachmentDeliveryGuide && (
+                            <p className={`${styles.text__Danger} text-danger position-absolute`}>La certificación bancaria es obligatoria</p>
+                        )}
                     </div>
                 )}
 

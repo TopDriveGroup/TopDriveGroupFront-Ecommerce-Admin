@@ -64,6 +64,7 @@ export interface IOrderDetail {
     comment?: string;
     conveyorShippingOrderNumber?: string;
     deliveryNoteNumber?: string;
+    attachmentDeliveryGuide?: File;
     commentConveyorShippingOrderNumber?: string;
     isArchive?: boolean;
     cancelMessage?: string;
