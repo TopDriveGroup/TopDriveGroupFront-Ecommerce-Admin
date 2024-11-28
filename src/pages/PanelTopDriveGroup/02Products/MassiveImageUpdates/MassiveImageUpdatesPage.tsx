@@ -96,6 +96,7 @@ function MassiveImageUpdatesPage() {
         return [];
     };
 
+    // ENVIO DEL FORMULARIO
     const onSubmit = async () => {
         try {
             const uploadedImages = await uploadImages();

@@ -57,12 +57,13 @@ export interface IOrderDetail {
     transactionId?: string,
 
     // MANEJO INTERNO DE LA ORDEN
-    state?: 'Iniciada en pasarela' | 'Rechazada' | 'En preparación' | 'En camino' | 'Entregado' | 'Cancelada' | 'Archivada';
+    state?: 'Iniciada en pasarela' | 'Rechazada' | 'En preparación' | 'Enviado' | 'Entregado' | 'Cancelada' | 'Archivada';
     status?: 'Pending payment' | 'Rejected' | 'Approved';
     shippingDate?: Date;
     total?: number;
     comment?: string;
     conveyorShippingOrderNumber?: string;
+    deliveryNoteNumber?: string;
     commentConveyorShippingOrderNumber?: string;
     isArchive?: boolean;
     cancelMessage?: string;

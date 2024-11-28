@@ -130,7 +130,7 @@ function ActiveCustomerOrdersPage() {
         // FILTRA SI HAY "reference" O "document"
         if (Array.isArray(ordersDetail)) {
             const filtered = ordersDetail.filter((order: IOrderDetail) => 
-                order.payment.reference === description || 
+                order.deliveryNoteNumber === description || 
                 order.buyer.document === description
             );
             setFilteredOrders(filtered);
@@ -205,11 +205,12 @@ function ActiveCustomerOrdersPage() {
                             <thead className={`${styles.container__Head}`}>
                                 <tr className={`${styles.container__Tr} d-flex align-items-center justify-content-between`}>
                                     <th className={`${styles.date__Order} d-flex align-items-center justify-content-center text-center`}>Fecha</th>
-                                    <th className={`${styles.reference} d-flex align-items-center justify-content-center text-center`}>Referencia</th>
+                                    <th className={`${styles.delivery__Note_Number} d-flex align-items-center justify-content-center text-center`}>Orden de venta</th>
+                                    <th className={`${styles.id__Gou} d-flex align-items-center justify-content-center text-center`}>ID GOU</th>
                                     <th className={`${styles.client} d-flex align-items-center justify-content-center text-center`}>Cliente</th>
                                     <th className={`${styles.id__Client} d-flex align-items-center justify-content-center text-center`}>Identificación</th>
                                     <th className={`${styles.status} d-flex align-items-center justify-content-center text-center`}>Estado del pago</th>
-                                    <th className={`${styles.state} d-flex align-items-center justify-content-center text-center`}>Estado de preparación</th>
+                                    <th className={`${styles.state} d-flex align-items-center justify-content-center text-center`}>Estado del pedido</th>
                                     <th className={`${styles.total} d-flex align-items-center justify-content-center text-center`}>Total</th>
                                     <th className={`${styles.actions} d-flex align-items-center justify-content-center text-center`}>Acciones</th>
                                 </tr>
@@ -221,12 +222,12 @@ function ActiveCustomerOrdersPage() {
                                         <td className={`${styles.date__Order} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
                                             <span className={`${styles.text__Ellipsis} overflow-hidden`}>{order.createdAt ? new Date(order.createdAt).toLocaleString() : 'Fecha no disponible'}</span>
                                         </td>
-                                        <td className={`${styles.reference} pt-0 pb-0 px-2 d-flex align-items-center justify-content-between`}>
-                                            <span className={`${styles.text__Ellipsis} overflow-hidden`}>{order.payment.reference}</span>
+                                        <td className={`${styles.delivery__Note_Number} pt-0 pb-0 px-2 d-flex align-items-center justify-content-between`}>
+                                            <span className={`${styles.text__Ellipsis} overflow-hidden`}>{order.deliveryNoteNumber}</span>
                                             <div className={`${styles.container__Icon_Copy} d-flex align-items-center justify-content-center position-relative`}
                                                 onClick={() => {
-                                                    if (order.payment.reference) {
-                                                        handleCopyReference(order._id ?? '', order.payment.reference);
+                                                    if (order.deliveryNoteNumber) {
+                                                        handleCopyReference(order._id ?? '', order.deliveryNoteNumber);
                                                     }
                                                 }}
                                             >
@@ -237,6 +238,9 @@ function ActiveCustomerOrdersPage() {
                                                     </div>
                                                 )}
                                             </div>
+                                        </td>
+                                        <td className={`${styles.id__Gou} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
+                                            <span className={`${styles.text__Ellipsis} overflow-hidden`}>{order.requestId}</span>
                                         </td>
                                         <td className={`${styles.client} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
                                             <span className={`${styles.text__Ellipsis} overflow-hidden`}>{order.buyer?.name || 'N/A'} {order.buyer?.surname || ''}</span>
