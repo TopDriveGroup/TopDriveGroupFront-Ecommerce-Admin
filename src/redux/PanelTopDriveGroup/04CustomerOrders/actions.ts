@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
-import { IOrderDetail, IOrderDetailResult } from '../../../types/orderDetail.types';
+import { IOrderDetailResult } from '../../../types/orderDetail.types';
 import { setOrderData, setErrorOrder, postGouPaymentOrderStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart, setPaymentsPendingStatusStart, getPaymentsPendingStatusStart, getAllActiveGetawayPaymentTransactionsStart, patchChangeStateConfirmationStart } from './customerOrdersSlice';
 
 //CREA UNA SESION DE PAGO PARA LA ORDEN
@@ -106,7 +106,8 @@ export const getAllActiveGetawayPaymentTransactions = (token: string) => async (
     }
 };
 
-export const patchChangeStateConfirmation = (idOrder: string, formData: Partial<IOrderDetail>, token: string) => async (dispatch: AppDispatch) => {
+
+export const patchChangeStateConfirmation = (idOrder: string, formData: any, token: string) => async (dispatch: AppDispatch) => {
     try {
         dispatch(patchChangeStateConfirmationStart());
         const response = await axiosInstance.patch(`/top-drive/orders-clients/${idOrder}`, formData, {
